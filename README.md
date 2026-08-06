@@ -1,106 +1,86 @@
-# RIG-Enhanced Agent Ops
+<div align="center">
+  <img src="assets/rig-enhanced-agent-ops-hero.png" width="100%" />
+</div>
 
-**Proof-gated agent operations with tamper-evident audit trail.**
+<br/>
 
-Every agent action is gated, signed, and auditable. This is what
-[AgentOps](https://www.agentops.ai/)-style observability looks like once
-the [RIG doctrine overlay](../rig-doctrine-overlay) is applied to it: agent
-actions don't just get *logged*, they get *judged* before they run, and
-*sealed* into a chain that proves — to a party who trusts nothing but math
-— exactly what happened, in what order, and that nothing was edited after
-the fact.
+<div align="center">
+  <h3>RIG-Enhanced Agent Ops</h3>
+  <p><em>Proof-gated agent operations with a tamper-evident audit trail.</em></p>
+</div>
 
-```
-  agent action + confidence
-          │
-          ▼
-   ┌─────────────┐     >= 0.85            run it, seal AUTO_EXECUTED
-   │  ActionGate │ ──  0.70 .. 0.85  ──▶   run it, seal VALIDATED (optional
-   └─────────────┘     <  0.70            independent validator)
-          │                                never run it, seal ESCALATED
-          ▼
-   ProofPacket #N
-     prev_hash  = hash of packet #N-1
-     hash       = sha256(action, input, output, confidence, status, ...)
-     signature  = HMAC(hash, secret)            [optional, authenticity]
-          │
-          ▼
-   AuditTrail — blockchain-style chain of every ProofPacket
-          │
-          ▼
-   Verifier — independent, recomputes every hash + signature from scratch
-```
+<div align="center">
 
-## Why this is not "just logging"
+![status](https://img.shields.io/badge/status-reference--implementation-C8A96E?style=flat-square&labelColor=0A0806)
+![tests](https://img.shields.io/badge/tests-20%20passing-5B8C5A?style=flat-square&labelColor=0A0806)
+![python](https://img.shields.io/badge/python-3.11%2B-C8A96E?style=flat-square&labelColor=0A0806)
+![license](https://img.shields.io/badge/license-MIT-C8A96E?style=flat-square&labelColor=0A0806)
 
-Traditional agent observability records *what happened, after it
-happened*. That's necessary but not sufficient for agents that can take
-real-world actions — send money, delete data, message customers, deploy
-code. RIG-Enhanced Agent Ops adds two things a log file cannot give you:
+</div>
 
-1. **A gate, not just a record.** [`ActionGate`](src/action_gate.py) sits
-   *in front of* every action. An action below the escalation threshold
-   never runs — full stop. Its refusal is sealed just as rigorously as an
-   execution would have been.
-2. **Tamper evidence, not just storage.** [`AuditTrail`](src/audit_trail.py)
-   chains every [`ProofPacket`](src/audit_trail.py) to the one before it,
-   blockchain-style. Edit any field of any packet after the fact — the
-   output, the confidence, even the timestamp — and every hash from that
-   point forward stops matching. An independent [`Verifier`](src/verifier.py)
-   that only ever sees an *exported* copy of the trail can prove this
-   without trusting the process that produced it.
+<br/>
 
-## The confidence gate
+> 🥇 Traditional agent observability records what happened, *after* it happened. That's necessary but not sufficient for agents that send money, delete data, or deploy code. Every action here is gated *before* it runs, and sealed into a chain that proves — to a party who trusts nothing but math — exactly what happened, in what order, untouched.
 
-```
-confidence >= 0.85            AUTO_EXECUTE   run it, seal the proof
-0.70 <= confidence < 0.85     VALIDATE       run it, optionally confirm with
-                                              an independent validator, seal
-                                              the proof either way
-confidence <  0.70            ESCALATE       never run it — seal the refusal
-                                              and hand off to a human/process
-```
+This is what [AgentOps](https://www.agentops.ai/)-style observability looks like once the [RIG doctrine overlay](../rig-doctrine-overlay) is applied: agent actions don't just get *logged*, they get *judged* before they run, and *sealed* into a blockchain-style chain.
 
-Both thresholds are configurable per `ActionGate` instance, but the
-default 0.85 / 0.70 split is the RIG doctrine baseline: better than
-9-in-10 confidence to act alone, better than 7-in-10 to act with a second
-opinion, and below that, no autonomy at all.
-
-## Quickstart
+## 60-second install
 
 ```python
 from src.action_gate import ActionGate, EscalationRequired
 from src.audit_trail import AuditTrail
 from src.verifier import Verifier
 
-# an audit trail that also HMAC-signs every packet it seals
 trail = AuditTrail(secret="use-a-real-secret-in-production")
 gate = ActionGate(audit_trail=trail)
-
 
 def deploy(release_id: str) -> dict:
     return {"deployed": release_id, "region": "us-east-1"}
 
-
 # high confidence -> runs immediately
 result = gate.execute("deploy_release", deploy, "release-42", confidence=0.96)
-print(result.status)          # GateStatus.AUTO_EXECUTED
-print(result.proof.hash)      # sha256 hexdigest sealed for this action
+print(result.status)  # GateStatus.AUTO_EXECUTED
 
 # low confidence -> never runs, escalates instead
 try:
     gate.execute("delete_production_database", deploy, "prod-db", confidence=0.40)
 except EscalationRequired as exc:
-    print(exc)  # action was never called; the refusal itself is on the record
+    print(exc)  # action was never called
 
 # ship the trail to an auditor who has never seen this process
-exported = trail.to_json()
-report = Verifier(secret="use-a-real-secret-in-production").verify_json(exported)
+report = Verifier(secret="use-a-real-secret-in-production").verify_json(trail.to_json())
 assert report.valid
 ```
 
-Try it yourself: attempt to quietly rewrite history and watch the
-verifier catch it.
+## How it works
+
+<div align="center">
+  <img src="assets/architecture.svg" width="100%" alt="Agent Ops architecture: action and confidence pass through ActionGate, which routes to auto-execute, validate, or escalate, then seals a hash-chained ProofPacket verified independently" />
+</div>
+
+<sub align="center">action + confidence → ActionGate → ProofPacket (prev_hash + hash + signature) → AuditTrail → independent Verifier</sub>
+
+## The confidence gate
+
+| Confidence | Route | Behavior |
+| :-- | :-- | :-- |
+| **≥ 0.85** | `AUTO_EXECUTE` | Runs immediately, seals the proof |
+| **0.70 – 0.85** | `VALIDATE` | Runs, optionally confirmed by an independent validator, seals the proof either way |
+| **< 0.70** | `ESCALATE` | Never runs — seals the refusal and hands off to a human/process |
+
+<sup>Both thresholds are configurable per <code>ActionGate</code>, but 0.85 / 0.70 is the RIG doctrine baseline.</sup>
+
+## Why it is not "just logging"
+
+- **A gate, not just a record** — [`ActionGate`](src/action_gate.py) sits *in front of* every action; below the escalation threshold, an action never runs, full stop
+- **Tamper evidence, not just storage** — [`AuditTrail`](src/audit_trail.py) chains every ProofPacket to the one before it; edit any field and every hash from that point forward stops matching
+- **A single tampered packet is one finding, not a cascade** — verification advances the expected `prev_hash` from each packet's *stored* hash
+- **The verifier trusts nothing it didn't recompute itself** — it never calls back into a live `AuditTrail`'s internal state
+
+<details>
+<summary><strong>Tamper detection, live</strong></summary>
+
+<br/>
 
 ```python
 trail.tamper(0, output={"deployed": "not-what-actually-happened"})
@@ -110,92 +90,54 @@ print(reason)  # "tamper detected at packet #0: stored hash ... does not
                #  match recomputed ..."
 ```
 
-## Package layout
+</details>
 
-| Path                              | What it is                                                              |
-| ---------------------------------- | ------------------------------------------------------------------------ |
-| `src/action_gate.py`               | `ActionGate` — confidence-gated execution wrapper                       |
-| `src/audit_trail.py`               | `AuditTrail` / `ProofPacket` — the hash-chained, HMAC-signable ledger    |
-| `src/verifier.py`                  | `Verifier` — independent, from-scratch chain + signature recomputation  |
-| `AGENTS.md`                        | TAC doctrine for agents (human or AI) working in this repo               |
-| `.rig/smoke.sh` + `smoke_runner.py`| **L10** self-evolving smoke harness (see below)                          |
-| `.rig/verify.sh` + `check_*.py`    | **L8** eight-layer verification gate (see below)                        |
-| `spec/features/*.feature`          | Executable Gherkin behavior spec (OpenSpec BDD, driven by `behave`)     |
-| `test/test_action_gate.py`         | pytest suite (20 tests: unit + integration)                             |
+<details>
+<summary><strong>L10 self-evolving smoke harness</strong></summary>
 
-## L10 — self-evolving smoke harness
+<br/>
 
 ```bash
 .rig/smoke.sh
 ```
 
-Runs a mock agent through the gate across six scenarios (auto-execute,
-validate, escalate, chain integrity, tamper detection, signature
-integrity) and journals the result of every run to
-`.rig/.smoke-journal.json`. Any scenario that has **ever** failed has its
-`hardening_level` permanently ratcheted up — future runs of that scenario
-test strictly more inputs, more mutated fields, and more edge cases than
-before. Hardening never regresses on a pass; only a failure raises it. The
-harness learns what broke and watches it more closely forever, not just
-until the next green run.
+Runs a mock agent through the gate across six scenarios (auto-execute, validate, escalate, chain integrity, tamper detection, signature integrity) and journals every run to `.rig/.smoke-journal.json`. Any scenario that has ever failed has its `hardening_level` permanently ratcheted up. Hardening never regresses on a pass; only a failure raises it.
 
-## L8 — eight-layer verification gate
+</details>
+
+<details>
+<summary><strong>L8 eight-layer verification gate</strong></summary>
+
+<br/>
 
 ```bash
 .rig/verify.sh
 ```
 
-| # | Layer         | What it checks                                                          |
-| - | ------------- | -------------------------------------------------------------------------|
-| 1 | syntax        | every module compiles                                                    |
-| 2 | unit          | `pytest -m unit` — isolated component behavior                           |
-| 3 | integration   | `pytest -m integration` — full gate → trail → verifier pipeline          |
-| 4 | eval          | confidence-routing table swept across `[0, 1]` (1000+ points, doctrine-exact boundaries) |
-| 5 | proof         | every sealed `ProofPacket` carries all required evidentiary fields       |
-| 6 | gate          | the tamper-detection gate itself is proven to fire, on a fresh trail     |
-| 7 | audit         | a 30-packet, mixed-outcome trail verifies end to end                     |
-| 8 | sign-off      | hard `AND` of layers 1–7 → `.rig/gate-report.json` (HMAC-signed if `RIG_PROOF_SECRET` is set) |
+| # | Layer | What it checks |
+| :-: | :-- | :-- |
+| 1 | syntax | Every module compiles |
+| 2 | unit | `pytest -m unit` — isolated component behavior |
+| 3 | integration | `pytest -m integration` — full gate → trail → verifier pipeline |
+| 4 | eval | Confidence-routing table swept across `[0, 1]` (1000+ points, doctrine-exact boundaries) |
+| 5 | proof | Every sealed ProofPacket carries all required evidentiary fields |
+| 6 | gate | The tamper-detection gate is proven to fire, on a fresh trail |
+| 7 | audit | A 30-packet, mixed-outcome trail verifies end to end |
+| 8 | sign-off | Hard `AND` of layers 1–7 → `.rig/gate-report.json` |
 
-`verify.sh` exits `0` only if **all seven** upstream layers pass — sign-off
-is never a majority vote.
+</details>
 
-## OpenSpec BDD
+## Documentation
 
-[`spec/features/gated-agent-actions.feature`](spec/features/gated-agent-actions.feature)
-is executable, not decorative:
+| Path | Role |
+| :-- | :-- |
+| [`src/action_gate.py`](src/action_gate.py) | `ActionGate` — confidence-gated execution wrapper |
+| [`src/audit_trail.py`](src/audit_trail.py) | `AuditTrail` / `ProofPacket` — hash-chained, HMAC-signable ledger |
+| [`src/verifier.py`](src/verifier.py) | `Verifier` — independent, from-scratch chain + signature recomputation |
+| [`AGENTS.md`](AGENTS.md) | TAC doctrine for agents working in this repo |
+| [`spec/features/gated-agent-actions.feature`](spec/features/gated-agent-actions.feature) | Executable Gherkin behavior spec |
+| [LICENSE](LICENSE) | MIT |
 
-```bash
-pip install -e ".[dev]"
-behave spec/features/gated-agent-actions.feature
-```
+---
 
-Scenarios cover the confidence-routing contract (auto-execute /
-validate-with-rejection / escalate), the blockchain-style chain linkage,
-and — the scenario that matters most — **tampered audit trail detected**,
-including the case where an attacker tampers a packet whose downstream
-chain otherwise still looks correct.
-
-## Design notes
-
-- **Integrity vs. authenticity are separate guarantees.** The hash chain
-  alone (no secret required) proves nothing in the trail has changed since
-  it was sealed. The HMAC signature (requires the secret) additionally
-  proves *who* sealed it. `Verifier` checks whichever guarantee you give it
-  the material to check.
-- **A single tampered packet is one finding, not a cascade.** Verification
-  advances the expected `prev_hash` using each packet's *stored* hash, so
-  editing packet #2 without resealing it is reported once, at #2 — not as
-  N chain-break findings for every packet after it.
-- **The verifier trusts nothing it didn't recompute itself.** `Verifier`
-  never calls back into a live `AuditTrail`'s internal state; it only ever
-  looks at exported plain dicts and recomputes every hash and signature
-  from first principles, the way a real external auditor would.
-- **Escalation means the action never ran.** `EscalationRequired` is raised
-  *before* `fn` is invoked. `ValidationFailed` is different: the action DID
-  run and was retroactively judged invalid by an independent validator —
-  both outcomes are sealed, but only one of them means "this never
-  happened."
-
-## License
-
-MIT — see [`LICENSE`](LICENSE).
+<div align="center"><sub>Built by Mike Rodgers · Forward Deployed Engineer · <a href="https://rodgersintelligence.com">rodgersintelligence.com</a></sub></div>
