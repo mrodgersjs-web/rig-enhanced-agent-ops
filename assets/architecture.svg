@@ -1,0 +1,97 @@
+<svg width="1200" height="400" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .kicker{font-family:'JetBrains Mono',monospace;font-size:11px;fill:#C8A96E;letter-spacing:3px;text-transform:uppercase}
+      .title{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:27px;fill:#F5F0EB}
+      .label{font-family:'Hanken Grotesk','Helvetica Neue',sans-serif;font-size:12px;fill:#F5F0EB;letter-spacing:1px}
+      .mono{font-family:'JetBrains Mono','SF Mono',monospace;font-size:10.5px;fill:#A09890}
+      .mono-gold{font-family:'JetBrains Mono','SF Mono',monospace;font-size:11px;fill:#C8A96E}
+      .caption{font-family:'JetBrains Mono',monospace;font-size:10px;fill:#635D57;letter-spacing:2px;text-transform:uppercase}
+    </style>
+    <radialGradient id="glowGold" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C8A96E" stop-opacity="0.55"/><stop offset="100%" stop-color="#C8A96E" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowGreen" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8CA88C" stop-opacity="0.55"/><stop offset="100%" stop-color="#8CA88C" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowAmber" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D4A857" stop-opacity="0.55"/><stop offset="100%" stop-color="#D4A857" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowRed" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C17767" stop-opacity="0.55"/><stop offset="100%" stop-color="#C17767" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ambient" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#181310" stop-opacity="1"/><stop offset="100%" stop-color="#0A0806" stop-opacity="1"/>
+    </radialGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#C8A96E"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="400" fill="url(#ambient)"/>
+
+  <text x="60" y="42" class="kicker">AGENT OPS</text>
+  <text x="60" y="72" class="title">Confidence routes the decision</text>
+
+  <!-- input -->
+  <g transform="translate(600,110)">
+    <circle r="34" fill="url(#glowGold)"/>
+    <circle r="24" fill="#141210" stroke="#C8A96E" stroke-width="2"/>
+    <text y="4" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="10" fill="#F5F0EB">IN</text>
+  </g>
+  <text x="600" y="70" text-anchor="middle" class="label">TASK RECEIVED</text>
+
+  <!-- branches -->
+  <path d="M582,128 C480,170 360,170 300,196" fill="none" stroke="#8CA88C" stroke-width="2" marker-end="url(#arrow)" opacity="0.85"/>
+  <path d="M600,134 V196" fill="none" stroke="#D4A857" stroke-width="2" marker-end="url(#arrow)" opacity="0.85"/>
+  <path d="M618,128 C720,170 840,170 900,196" fill="none" stroke="#C17767" stroke-width="2" marker-end="url(#arrow)" opacity="0.85"/>
+
+  <text x="440" y="165" class="mono" fill="#8CA88C" font-family="'JetBrains Mono',monospace" font-size="11">confidence ≥ 85</text>
+  <text x="640" y="165" class="mono" fill="#D4A857" font-family="'JetBrains Mono',monospace" font-size="11">≥ 70</text>
+  <text x="760" y="165" class="mono" fill="#C17767" font-family="'JetBrains Mono',monospace" font-size="11">&lt; 70</text>
+
+  <!-- AUTO -->
+  <g transform="translate(300,225)">
+    <ellipse rx="130" ry="46" fill="url(#glowGreen)" opacity="0.6"/>
+    <rect x="-95" y="-32" width="190" height="64" rx="8" fill="#141210" stroke="#8CA88C" stroke-width="2"/>
+    <text y="-2" text-anchor="middle" class="label" fill="#F5F0EB">AUTO-EXECUTE</text>
+    <text y="18" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="10" fill="#8CA88C">no human in loop</text>
+  </g>
+
+  <!-- VALIDATE -->
+  <g transform="translate(600,225)">
+    <ellipse rx="130" ry="46" fill="url(#glowAmber)" opacity="0.6"/>
+    <rect x="-95" y="-32" width="190" height="64" rx="8" fill="#141210" stroke="#D4A857" stroke-width="2"/>
+    <text y="-2" text-anchor="middle" class="label" fill="#F5F0EB">VALIDATE</text>
+    <text y="18" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="10" fill="#D4A857">second pass check</text>
+  </g>
+
+  <!-- ESCALATE -->
+  <g transform="translate(900,225)">
+    <ellipse rx="130" ry="46" fill="url(#glowRed)" opacity="0.6"/>
+    <rect x="-95" y="-32" width="190" height="64" rx="8" fill="#141210" stroke="#C17767" stroke-width="2"/>
+    <text y="-2" text-anchor="middle" class="label" fill="#F5F0EB">ESCALATE</text>
+    <text y="18" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="10" fill="#C17767">human required</text>
+  </g>
+
+  <!-- down to audit chain -->
+  <path d="M300,271 V310" stroke="#8CA88C" stroke-width="1.5" opacity="0.6"/>
+  <path d="M600,271 V310" stroke="#D4A857" stroke-width="1.5" opacity="0.6"/>
+  <path d="M900,271 V310" stroke="#C17767" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- audit chain -->
+  <line x1="140" y1="330" x2="1080" y2="330" stroke="#A09890" stroke-width="1.4" opacity="0.4"/>
+  <g font-family="'JetBrains Mono',monospace" font-size="9.5" fill="#A09890">
+    <circle cx="140" cy="330" r="5" fill="#C8A96E"/>
+    <circle cx="300" cy="330" r="5" fill="#8CA88C"/>
+    <circle cx="470" cy="330" r="5" fill="#C8A96E"/>
+    <circle cx="600" cy="330" r="5" fill="#D4A857"/>
+    <circle cx="740" cy="330" r="5" fill="#C8A96E"/>
+    <circle cx="900" cy="330" r="5" fill="#C17767"/>
+    <circle cx="1080" cy="330" r="5" fill="#C8A96E"/>
+    <text x="600" y="352" text-anchor="middle" letter-spacing="1.5" fill="#C8A96E">AUDIT CHAIN</text>
+  </g>
+
+  <line x1="60" y1="368" x2="1140" y2="368" stroke="#A09890" stroke-width="1" opacity="0.1"/>
+  <text x="60" y="390" class="caption">every branch, one immutable log</text>
+</svg>
