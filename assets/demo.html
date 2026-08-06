@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>rig-enhanced-agent-ops — RIG</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/TextPlugin.min.js"></script>
+    <style>
+:root{
+  --bg:#0A0806;
+  --gold:#C8A96E;
+  --gold-dim:rgba(200,169,110,.38);
+  --gold-soft:rgba(200,169,110,.12);
+  --cream:#F5F0EB;
+  --cream-dim:rgba(245,240,235,.62);
+  --serif:'Cormorant Garamond',Didot,'Playfair Display',Georgia,'Times New Roman',serif;
+  --sans:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Helvetica,Arial,sans-serif;
+  --mono:'JetBrains Mono','SF Mono',Menlo,Monaco,Consolas,'Liberation Mono',monospace;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:var(--bg);}
+#root{
+  position:relative;
+  width:1920px;height:1080px;
+  overflow:hidden;
+  background:var(--bg);
+  font-family:var(--sans);
+}
+.clip{position:absolute;inset:0;}
+
+/* ---------- persistent stage chrome ---------- */
+#stage{z-index:1;}
+.bg-wash{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 1100px 700px at 50% 38%, rgba(200,169,110,.07), rgba(200,169,110,0) 60%),
+    radial-gradient(ellipse 1600px 1000px at 50% 50%, #171310 0%, #0A0806 62%),
+    linear-gradient(180deg, #0A0806 0%, #060504 100%);
+}
+.bg-vignette{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 1400px 900px at 50% 50%, rgba(0,0,0,0) 45%, rgba(0,0,0,.55) 100%);
+}
+.corner-mark{
+  position:absolute;
+  font-family:var(--mono);
+  font-size:15px;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:rgba(200,169,110,.74);
+  opacity:1;
+}
+.corner-mark.bl{left:72px;bottom:56px;}
+.corner-mark.br{right:72px;bottom:56px;text-align:right;}
+.frame-bracket{position:absolute;width:34px;height:34px;opacity:.55;}
+.frame-bracket.tl{top:56px;left:72px;border-top:1px solid var(--gold-dim);border-left:1px solid var(--gold-dim);}
+.frame-bracket.tr{top:56px;right:72px;border-top:1px solid var(--gold-dim);border-right:1px solid var(--gold-dim);}
+.progress-track{
+  position:absolute;left:0;right:0;bottom:0;height:3px;
+  background:rgba(245,240,235,.06);
+}
+.progress-fill{
+  position:absolute;left:0;top:0;bottom:0;width:100%;
+  background:linear-gradient(90deg, rgba(200,169,110,.55), var(--gold));
+  transform-origin:left center;
+  transform:scaleX(0);
+}
+
+/* ---------- act shared ---------- */
+.act{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;padding:0 160px;z-index:2;}
+.kicker{
+  font-family:var(--mono);
+  font-size:21px;
+  letter-spacing:.5em;
+  text-transform:uppercase;
+  color:var(--gold);
+  opacity:0;
+  margin-bottom:44px;
+  --track:.5;
+  letter-spacing:calc(.28em + var(--track,0) * 1em);
+}
+.glow{
+  position:absolute;
+  width:820px;height:820px;
+  left:50%;top:50%;
+  margin-left:-410px;margin-top:-410px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(200,169,110,.16) 0%, rgba(200,169,110,0) 68%);
+  opacity:0;
+  transform:scale(.85);
+  filter:blur(2px);
+}
+
+/* ---------- act 1 : problem ---------- */
+.problem-title{
+  font-family:var(--serif);
+  font-weight:500;
+  font-size:96px;
+  line-height:1.08;
+  letter-spacing:0;
+  color:var(--cream);
+  text-align:center;
+  max-width:1560px;
+}
+.problem-title .word{
+  display:inline-block;
+  opacity:0;
+  --track:.35;
+  letter-spacing:calc(var(--track,0) * 1em);
+}
+.problem-title .word.gold{color:var(--gold);}
+.divider{
+  margin-top:50px;
+  width:120px;height:2px;
+  background:linear-gradient(90deg, rgba(200,169,110,0), var(--gold), rgba(200,169,110,0));
+  transform:scaleX(0);
+  transform-origin:center center;
+}
+
+/* ---------- act 2 : solution ---------- */
+.flow{display:flex;align-items:center;justify-content:center;margin-bottom:64px;}
+.node{
+  display:flex;flex-direction:column;align-items:flex-start;justify-content:center;
+  min-width:196px;
+  padding:18px 22px;
+  border:1px solid var(--gold-dim);
+  border-radius:10px;
+  background:var(--gold-soft);
+  opacity:0;
+  transform:scale(.72);
+}
+.node-index{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:.15em;
+  color:var(--gold);
+  opacity:.8;
+  margin-bottom:8px;
+}
+.node-label{
+  font-family:var(--mono);
+  font-size:14px;
+  letter-spacing:.04em;
+  color:var(--cream);
+  white-space:nowrap;
+}
+.connector{
+  width:60px;height:2px;
+  background:linear-gradient(90deg, var(--gold-dim), var(--gold));
+  transform:scaleX(0);
+  transform-origin:left center;
+  margin:0 2px;
+}
+.repo-name{
+  font-family:var(--serif);
+  font-weight:600;
+  font-size:132px;
+  letter-spacing:0;
+  color:var(--cream);
+  opacity:0;
+  transform:scale(.92);
+  text-align:center;
+  --track:.5;
+}
+.repo-name-inner{letter-spacing:calc(var(--track,0) * 1em);}
+.tagline{
+  margin-top:26px;
+  font-family:var(--sans);
+  font-size:25px;
+  font-weight:400;
+  letter-spacing:.01em;
+  color:var(--cream-dim);
+  opacity:0;
+  text-align:center;
+}
+
+/* ---------- act 3 : install ---------- */
+.panel{
+  min-width:760px;
+  max-width:1400px;
+  padding:0 0 40px 0;
+  border-radius:16px;
+  border:1px solid var(--gold-dim);
+  background:rgba(255,255,255,.032);
+  box-shadow:0 40px 90px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.05);
+  opacity:0;
+  transform:translateY(14px) scale(.97);
+}
+.panel-bar{
+  display:flex;align-items:center;
+  gap:9px;
+  padding:20px 28px;
+  border-bottom:1px solid rgba(245,240,235,.07);
+}
+.dot{width:11px;height:11px;border-radius:50%;opacity:.85;}
+.dot.r{background:#FF5F57;}
+.dot.y{background:#FEBC2E;}
+.dot.g{background:#28C840;}
+.panel-label{
+  margin-left:16px;
+  font-family:var(--mono);
+  font-size:14px;
+  letter-spacing:.06em;
+  color:var(--cream-dim);
+}
+.panel-body{
+  padding:36px 40px 8px 40px;
+  font-family:var(--mono);
+  font-size:29px;
+  line-height:1.85;
+  white-space:pre;
+}
+.prompt{color:var(--gold);margin-right:18px;}
+.type-static{color:var(--cream-dim);}
+.type-live{color:var(--gold);}
+.type-live.cream{color:var(--cream);}
+.cursor-blink{animation:hf-blink .8s step-end infinite;}
+.cursor-solid{animation:none;opacity:1;}
+.cursor-hide{animation:none;opacity:0;}
+@keyframes hf-blink{0%,100%{opacity:1;}50%{opacity:0;}}
+.cta{
+  margin-top:56px;
+  display:flex;flex-direction:column;align-items:center;
+  opacity:0;
+  transform:translateY(10px);
+}
+.cta-eyebrow{
+  font-family:var(--mono);
+  font-size:16px;
+  letter-spacing:.4em;
+  text-transform:uppercase;
+  color:var(--cream-dim);
+  margin-bottom:16px;
+}
+.cta-url{
+  font-family:var(--sans);
+  font-weight:600;
+  font-size:42px;
+  color:var(--gold);
+  --track:.3;
+  letter-spacing:calc(.01em + var(--track,0) * 1em);
+}
+
+/* ---------- transitions ---------- */
+.blackout{background:#000000;opacity:0;z-index:9;pointer-events:none;}
+</style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="rig-enhanced-agent-ops" data-start="0" data-width="1920" data-height="1080" data-duration="15">
+      <section id="rig-enhanced-agent-ops-stage" class="clip" data-start="0" data-duration="15" data-track-index="0">
+        <div class="bg-wash"></div>
+        <div class="bg-vignette"></div>
+        <div class="frame-bracket tl"></div>
+        <div class="frame-bracket tr"></div>
+        <div class="corner-mark bl">RIG</div>
+        <div class="corner-mark br">Rodgers Intelligence</div>
+        <div class="progress-track"><div id="rig-enhanced-agent-ops-progress" class="progress-fill"></div></div>
+      </section>
+
+      <section id="rig-enhanced-agent-ops-act1" class="clip act" data-start="0" data-duration="5" data-track-index="1">
+        <div id="rig-enhanced-agent-ops-glow1" class="glow"></div>
+        <div id="rig-enhanced-agent-ops-kicker1" class="kicker">The Problem</div>
+        <h1 class="problem-title"><span id="rig-enhanced-agent-ops-word-0" class="word">Agent</span> <span id="rig-enhanced-agent-ops-word-1" class="word">actions</span> <span id="rig-enhanced-agent-ops-word-2" class="word">are</span> <span id="rig-enhanced-agent-ops-word-3" class="word gold">ungoverned.</span></h1>
+        <div id="rig-enhanced-agent-ops-divider1" class="divider"></div>
+      </section>
+
+      <section id="rig-enhanced-agent-ops-act2" class="clip act" data-start="5" data-duration="5" data-track-index="1">
+        <div id="rig-enhanced-agent-ops-glow2" class="glow"></div>
+        <div id="rig-enhanced-agent-ops-kicker2" class="kicker">The Solution</div>
+        <div id="rig-enhanced-agent-ops-flow" class="flow"><div id="rig-enhanced-agent-ops-node-0" class="node"><span class="node-index">01</span><span class="node-label">Action</span></div><div id="rig-enhanced-agent-ops-conn-0" class="connector"></div><div id="rig-enhanced-agent-ops-node-1" class="node"><span class="node-index">02</span><span class="node-label">Confidence Gate</span></div><div id="rig-enhanced-agent-ops-conn-1" class="connector"></div><div id="rig-enhanced-agent-ops-node-2" class="node"><span class="node-index">03</span><span class="node-label">Hash Chain</span></div><div id="rig-enhanced-agent-ops-conn-2" class="connector"></div><div id="rig-enhanced-agent-ops-node-3" class="node"><span class="node-index">04</span><span class="node-label">Audit Trail</span></div></div>
+        <h2 id="rig-enhanced-agent-ops-reponame" class="repo-name"><span class="repo-name-inner">rig-enhanced-agent-ops</span></h2>
+        <div id="rig-enhanced-agent-ops-tagline" class="tagline">Every action, scored and chained.</div>
+      </section>
+
+      <section id="rig-enhanced-agent-ops-act3" class="clip act" data-start="10" data-duration="5" data-track-index="1">
+        <div id="rig-enhanced-agent-ops-glow3" class="glow"></div>
+        <div id="rig-enhanced-agent-ops-kicker3" class="kicker">Get Started</div>
+        <div id="rig-enhanced-agent-ops-panel" class="panel">
+          <div class="panel-bar"><span class="panel-label">gate.yaml</span></div>
+          <div class="panel-body"><div class="line"><span class="type-static">confidence &gt;= 0.95   </span><span id="rig-enhanced-agent-ops-seg0-text" class="type-live cream"></span><span id="rig-enhanced-agent-ops-seg0-cursor" class="cursor-blink">|</span></div><div class="line"><span class="type-static">confidence &gt;= 0.70   </span><span id="rig-enhanced-agent-ops-seg1-text" class="type-live cream"></span><span id="rig-enhanced-agent-ops-seg1-cursor" class="cursor-blink">|</span></div><div class="line"><span class="type-static">confidence &lt;  0.70   </span><span id="rig-enhanced-agent-ops-seg2-text" class="type-live cream"></span><span id="rig-enhanced-agent-ops-seg2-cursor" class="cursor-blink">|</span></div></div>
+        </div>
+        <div id="rig-enhanced-agent-ops-cta" class="cta">
+          <div class="cta-eyebrow">Learn More</div>
+          <div class="cta-url">rodgersintelligence.com</div>
+        </div>
+      </section>
+      <div id="rig-enhanced-agent-ops-blackout" class="clip blackout" data-start="0" data-duration="15" data-track-index="2"></div>
+    </div>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true, defaults: { ease: "power2.out" } });
+      // --- act 1: problem ---
+      tl.fromTo("#rig-enhanced-agent-ops-glow1", { opacity: 0, scale: .85 }, { opacity: .55, scale: 1, duration: 2.6, ease: "sine.out" }, 0.1);
+      tl.fromTo("#rig-enhanced-agent-ops-kicker1", { opacity: 0, "--track": .5 }, { opacity: 1, "--track": 0, duration: 0.7, ease: "power2.out" }, 0.15);
+      tl.fromTo("#rig-enhanced-agent-ops-word-0", { opacity: 0, "--track": .35 }, { opacity: 1, "--track": 0, duration: 1, ease: "power2.out" }, 0.5);
+      tl.fromTo("#rig-enhanced-agent-ops-word-1", { opacity: 0, "--track": .35 }, { opacity: 1, "--track": 0, duration: 1, ease: "power2.out" }, 0.61);
+      tl.fromTo("#rig-enhanced-agent-ops-word-2", { opacity: 0, "--track": .35 }, { opacity: 1, "--track": 0, duration: 1, ease: "power2.out" }, 0.72);
+      tl.fromTo("#rig-enhanced-agent-ops-word-3", { opacity: 0, "--track": .35 }, { opacity: 1, "--track": 0, duration: 1, ease: "power2.out" }, 0.83);
+      tl.fromTo("#rig-enhanced-agent-ops-divider1", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "expo.out" }, 1.98);
+      // --- act 2: solution ---
+      tl.fromTo("#rig-enhanced-agent-ops-glow2", { opacity: 0, scale: .85 }, { opacity: .5, scale: 1, duration: 2.2, ease: "sine.out" }, 5.1);
+      tl.fromTo("#rig-enhanced-agent-ops-kicker2", { opacity: 0, "--track": .5 }, { opacity: 1, "--track": 0, duration: 0.55, ease: "power2.out" }, 5.15);
+      tl.fromTo("#rig-enhanced-agent-ops-node-0", { opacity: 0, scale: .72 }, { opacity: 1, scale: 1, duration: 0.42, ease: "back.out(1.6)" }, 5.5);
+      tl.fromTo("#rig-enhanced-agent-ops-node-1", { opacity: 0, scale: .72 }, { opacity: 1, scale: 1, duration: 0.42, ease: "back.out(1.6)" }, 5.991);
+      tl.fromTo("#rig-enhanced-agent-ops-node-2", { opacity: 0, scale: .72 }, { opacity: 1, scale: 1, duration: 0.42, ease: "back.out(1.6)" }, 6.482);
+      tl.fromTo("#rig-enhanced-agent-ops-node-3", { opacity: 0, scale: .72 }, { opacity: 1, scale: 1, duration: 0.42, ease: "back.out(1.6)" }, 6.973);
+      tl.fromTo("#rig-enhanced-agent-ops-conn-0", { scaleX: 0 }, { scaleX: 1, duration: 0.22, ease: "power2.out" }, 5.731);
+      tl.fromTo("#rig-enhanced-agent-ops-conn-1", { scaleX: 0 }, { scaleX: 1, duration: 0.22, ease: "power2.out" }, 6.222);
+      tl.fromTo("#rig-enhanced-agent-ops-conn-2", { scaleX: 0 }, { scaleX: 1, duration: 0.22, ease: "power2.out" }, 6.713);
+      tl.fromTo("#rig-enhanced-agent-ops-reponame", { opacity: 0, scale: .92, "--track": .5 }, { opacity: 1, scale: 1, "--track": 0, duration: 0.8, ease: "expo.out" }, 7.673);
+      tl.fromTo("#rig-enhanced-agent-ops-tagline", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 8.093);
+      // --- act 3: install ---
+      tl.fromTo("#rig-enhanced-agent-ops-kicker3", { opacity: 0, "--track": .5 }, { opacity: 1, "--track": 0, duration: 0.55, ease: "power2.out" }, 10.3);
+      tl.fromTo("#rig-enhanced-agent-ops-panel", { opacity: 0, y: 14, scale: .97 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "power3.out" }, 10.55);
+      tl.call(() => { document.querySelector("#rig-enhanced-agent-ops-seg0-cursor").classList.replace("cursor-blink", "cursor-solid"); }, [], 10.85);
+      tl.to("#rig-enhanced-agent-ops-seg0-text", { text: { value: "auto-execute" }, duration: 0.6, ease: "none" }, 10.85);
+      tl.call(() => { document.querySelector("#rig-enhanced-agent-ops-seg0-cursor").classList.replace("cursor-solid", "cursor-blink"); }, [], 11.45);
+      tl.call(() => { document.querySelector("#rig-enhanced-agent-ops-seg0-cursor").classList.replace("cursor-blink", "cursor-hide"); document.querySelector("#rig-enhanced-agent-ops-seg1-cursor").classList.replace("cursor-blink", "cursor-hide"); }, [], 11.45);
+      tl.call(() => { document.querySelector("#rig-enhanced-agent-ops-seg1-cursor").classList.replace("cursor-hide", "cursor-blink"); }, [], 11.62);
+      tl.call(() => { document.querySelector("#rig-enhanced-agent-ops-seg1-cursor").classList.replace("cursor-blink", "cursor-solid"); }, [], 11.77);
+      tl.to("#rig-enhanced-agent-ops-seg1-text", { text: { value: "human review" }, duration: 0.6, ease: "none" }, 11.77);
+      tl.call(() => { document.querySelector("#rig-enhanced-agent-ops-seg1-cursor").classList.replace("cursor-solid", "cursor-blink"); }, [], 12.37);
+      tl.call(() => { document.querySelector("#rig-enhanced-agent-ops-seg1-cursor").classList.replace("cursor-blink", "cursor-hide"); document.querySelector("#rig-enhanced-agent-ops-seg2-cursor").classList.replace("cursor-blink", "cursor-hide"); }, [], 12.37);
+      tl.call(() => { document.querySelector("#rig-enhanced-agent-ops-seg2-cursor").classList.replace("cursor-hide", "cursor-blink"); }, [], 12.54);
+      tl.call(() => { document.querySelector("#rig-enhanced-agent-ops-seg2-cursor").classList.replace("cursor-blink", "cursor-solid"); }, [], 12.69);
+      tl.to("#rig-enhanced-agent-ops-seg2-text", { text: { value: "blocked" }, duration: 0.35, ease: "none" }, 12.69);
+      tl.call(() => { document.querySelector("#rig-enhanced-agent-ops-seg2-cursor").classList.replace("cursor-solid", "cursor-blink"); }, [], 13.04);
+      tl.fromTo("#rig-enhanced-agent-ops-cta", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.75, ease: "power2.out" }, 13.36);
+      tl.fromTo("#rig-enhanced-agent-ops-cta .cta-url", { "--track": .3 }, { "--track": 0, duration: 0.75, ease: "power2.out" }, 13.36);
+      // --- persistent progress bar ---
+      tl.fromTo("#rig-enhanced-agent-ops-progress", { scaleX: 0 }, { scaleX: 1, duration: 15, ease: "none" }, 0);
+      // --- transitions (fade to black between acts) ---
+      tl.set("#rig-enhanced-agent-ops-blackout", { opacity: 0 }, 0);
+      tl.to("#rig-enhanced-agent-ops-blackout", { opacity: 1, duration: 0.45, ease: "power2.inOut" }, 4.35);
+      tl.to("#rig-enhanced-agent-ops-blackout", { opacity: 0, duration: 0.45, ease: "power2.inOut" }, 5.2);
+      tl.to("#rig-enhanced-agent-ops-blackout", { opacity: 1, duration: 0.45, ease: "power2.inOut" }, 9.35);
+      tl.to("#rig-enhanced-agent-ops-blackout", { opacity: 0, duration: 0.45, ease: "power2.inOut" }, 10.2);
+      window.__timelines["rig-enhanced-agent-ops"] = tl;
+    </script>
+  </body>
+</html>
