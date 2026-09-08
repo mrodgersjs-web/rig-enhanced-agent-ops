@@ -12,7 +12,7 @@
 <div align="center">
 
 ![status](https://img.shields.io/badge/status-reference--implementation-C8A96E?style=flat-square&labelColor=0A0806)
-![tests](https://img.shields.io/badge/tests-20%20passing-5B8C5A?style=flat-square&labelColor=0A0806)
+[![CI](https://img.shields.io/github/actions/workflow/status/mrodgersjs-web/rig-enhanced-agent-ops/smoke.yml?branch=main)](https://github.com/mrodgersjs-web/rig-enhanced-agent-ops/actions/workflows/smoke.yml)
 ![python](https://img.shields.io/badge/python-3.11%2B-C8A96E?style=flat-square&labelColor=0A0806)
 ![license](https://img.shields.io/badge/license-MIT-C8A96E?style=flat-square&labelColor=0A0806)
 
