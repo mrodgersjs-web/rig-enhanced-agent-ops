@@ -16,6 +16,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `rig-agent-ops` command line (`src/cli.py` with `test/test_cli.py`):
+  `demo` runs the gate loop end to end and prints the four lines the README
+  quotes, `verify PATH` re-checks an exported trail (exit 0 valid, 1
+  invalid), `inspect PATH` summarizes one. Six CLI tests cover those exit
+  codes and outputs.
 - `test/test_audit_trail.py`: eight tests (packet chaining and sealing,
   unsigned trails, the environment-variable key path, clean verify,
   tamper detection, JSON export round trip, garbage rejection, and the
