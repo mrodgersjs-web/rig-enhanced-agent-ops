@@ -4,19 +4,19 @@ build-backend = "hatchling.build"
 
 [project]
 name = "rig-enhanced-agent-ops"
-version = "0.1.0"
-description = "Proof-gated agent operations with a tamper-evident, HMAC-signed audit trail — the RIG doctrine overlay applied to agent observability/ops."
+version = "0.2.0"
+description = "Confidence-gated agent actions sealed into a tamper-evident, HMAC-signed audit trail, with an independent verifier and CLI."
 readme = "README.md"
 license = { text = "MIT" }
-requires-python = ">=3.9"
-authors = [{ name = "RIG", email = "hello@mikerodgers.tech" }]
+requires-python = ">=3.10"
+authors = [{ name = "Mike Rodgers" }]
 keywords = [
   "agent-ops",
-  "observability",
-  "proof-gate",
   "audit-trail",
   "tamper-evident",
-  "rig-doctrine",
+  "hash-chain",
+  "hmac",
+  "verification",
   "ai-agents",
 ]
 classifiers = [
@@ -25,22 +25,27 @@ classifiers = [
   "License :: OSI Approved :: MIT License",
   "Operating System :: OS Independent",
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
   "Topic :: Software Development :: Libraries",
   "Topic :: System :: Monitoring",
   "Topic :: Security",
 ]
+
 dependencies = []
 
 [project.optional-dependencies]
-dev = ["pytest>=7.4", "behave>=1.2.6"]
+dev = ["pytest>=7.4", "pytest-cov>=4.0", "ruff>=0.4", "behave>=1.2.6"]
+
+[project.scripts]
+rig-agent-ops = "src.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/mrodgersjs-web/rig-enhanced-agent-ops"
 Repository = "https://github.com/mrodgersjs-web/rig-enhanced-agent-ops"
+Issues = "https://github.com/mrodgersjs-web/rig-enhanced-agent-ops/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src"]
@@ -51,3 +56,22 @@ markers = [
   "unit: fast, isolated tests of a single class or function",
   "integration: end-to-end tests across ActionGate + AuditTrail + Verifier",
 ]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+".rig/**" = ["B023"]
+"spec/**" = ["E402"]
+
+[tool.coverage.run]
+source = ["src"]
+omit = ["src/__init__.py"]
+
+[tool.coverage.report]
+exclude_lines = ["pragma: no cover", "if __name__ == .__main__.:", "if TYPE_CHECKING:"]
