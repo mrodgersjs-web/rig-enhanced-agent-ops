@@ -16,6 +16,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `test/test_verifier.py`: six tests for the independent verifier (clean
+  trail passes, file round trip, wrong key fails, post-seal edit is
+  detected, packet reorder is detected, and the documented
+  tail-truncation limitation where only the packet count changes).
 - CI workflow that runs lint and the test suite with coverage on push and pull request.
 - Community files: security policy, code of conduct, contributing guide, issue and pull request templates.
 - `docs/architecture.md` design notes and a runnable example under `examples/`.
