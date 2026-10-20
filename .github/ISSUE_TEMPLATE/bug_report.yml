@@ -1,0 +1,26 @@
+name: Bug report
+description: Report something that does not work as documented.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what you saw instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: The shortest command sequence or code that shows the problem.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version and environment
+      description: Output of `python --version` and the commit or release you ran.
+    validations:
+      required: false
