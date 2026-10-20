@@ -16,6 +16,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `test/test_audit_trail.py`: eight tests (packet chaining and sealing,
+  unsigned trails, the environment-variable key path, clean verify,
+  tamper detection, JSON export round trip, garbage rejection, and the
+  signed payload excluding hash and signature).
 - `test/test_verifier.py`: six tests for the independent verifier (clean
   trail passes, file round trip, wrong key fails, post-seal edit is
   detected, packet reorder is detected, and the documented
