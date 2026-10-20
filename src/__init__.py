@@ -15,7 +15,7 @@ from .action_gate import (
     ValidationFailed,
 )
 from .audit_trail import GENESIS_HASH, AuditTrail, ProofPacket
-from .verifier import Finding, Verifier, VerificationReport
+from .verifier import Finding, VerificationReport, Verifier
 
 __version__ = "0.1.0"
 

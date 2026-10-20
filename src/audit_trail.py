@@ -28,7 +28,7 @@ import json
 import os
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
-from typing import Any, List, Optional, Tuple, Union
+from typing import Any
 
 GENESIS_HASH = "0" * 64
 _ENV_SECRET_VAR = "RIG_PROOF_SECRET"
@@ -48,7 +48,7 @@ def _now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
-def _coerce_secret(secret: Optional[Union[bytes, str]]) -> Optional[bytes]:
+def _coerce_secret(secret: bytes | str | None) -> bytes | None:
     if secret is None:
         return None
     if isinstance(secret, str):
@@ -77,7 +77,7 @@ class ProofPacket:
     prev_hash: str
     meta: dict = field(default_factory=dict)
     hash: str = ""
-    signature: Optional[str] = None
+    signature: str | None = None
 
     def _payload(self) -> dict:
         """Everything that participates in the hash. Never includes
@@ -101,7 +101,7 @@ class ProofPacket:
         """HMAC-SHA256 over the sealed hash — proves *who* sealed this packet."""
         return hmac.new(secret, self.hash.encode("utf-8"), hashlib.sha256).hexdigest()
 
-    def seal(self, secret: Optional[bytes] = None) -> "ProofPacket":
+    def seal(self, secret: bytes | None = None) -> ProofPacket:
         """Compute and store ``hash`` (and ``signature``, if a secret is given).
 
         Must be called exactly once, immediately after construction, before
@@ -118,7 +118,7 @@ class ProofPacket:
         return asdict(self)
 
     @classmethod
-    def from_dict(cls, data: dict) -> "ProofPacket":
+    def from_dict(cls, data: dict) -> ProofPacket:
         return cls(**data)
 
 
@@ -134,14 +134,14 @@ class AuditTrail:
         enforced by the hash chain, only authenticity is unavailable).
     """
 
-    def __init__(self, secret: Optional[Union[bytes, str]] = None) -> None:
-        self._packets: List[ProofPacket] = []
+    def __init__(self, secret: bytes | str | None = None) -> None:
+        self._packets: list[ProofPacket] = []
         if secret is None:
             secret = os.environ.get(_ENV_SECRET_VAR)
-        self._secret: Optional[bytes] = _coerce_secret(secret)
+        self._secret: bytes | None = _coerce_secret(secret)
 
     @property
-    def packets(self) -> List[ProofPacket]:
+    def packets(self) -> list[ProofPacket]:
         return list(self._packets)
 
     @property
@@ -164,7 +164,7 @@ class AuditTrail:
         output: Any,
         confidence: float,
         status: str,
-        meta: Optional[dict] = None,
+        meta: dict | None = None,
     ) -> ProofPacket:
         """Seal a new ProofPacket referencing the current chain head and append it.
 
@@ -188,8 +188,8 @@ class AuditTrail:
         return packet
 
     def verify(
-        self, secret: Optional[Union[bytes, str]] = None
-    ) -> Tuple[bool, Optional[str]]:
+        self, secret: bytes | str | None = None
+    ) -> tuple[bool, str | None]:
         """Recompute every hash (and signature, if a key is available) from genesis.
 
         Returns ``(True, None)`` if the trail is fully intact, or
@@ -231,7 +231,7 @@ class AuditTrail:
         return _canonical_json([p.to_dict() for p in self._packets])
 
     @classmethod
-    def from_json(cls, data: str, secret: Optional[Union[bytes, str]] = None) -> "AuditTrail":
+    def from_json(cls, data: str, secret: bytes | str | None = None) -> AuditTrail:
         trail = cls(secret=secret)
         for raw in json.loads(data):
             trail._packets.append(ProofPacket.from_dict(raw))

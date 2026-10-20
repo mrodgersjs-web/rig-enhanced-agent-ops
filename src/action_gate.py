@@ -20,9 +20,10 @@ do that" (or "why didn't it") always has an answer on disk.
 from __future__ import annotations
 
 import time
+from collections.abc import Callable
 from dataclasses import dataclass
 from enum import Enum
-from typing import Any, Callable, Optional
+from typing import Any
 
 from .audit_trail import AuditTrail, ProofPacket
 
@@ -107,8 +108,8 @@ class ActionGate:
 
     def __init__(
         self,
-        audit_trail: Optional[AuditTrail] = None,
-        validator: Optional[Callable[[str, Any, Any], bool]] = None,
+        audit_trail: AuditTrail | None = None,
+        validator: Callable[[str, Any, Any], bool] | None = None,
         auto_threshold: float = AUTO_THRESHOLD,
         validate_threshold: float = VALIDATE_THRESHOLD,
     ) -> None:

@@ -19,7 +19,7 @@ import json
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import TYPE_CHECKING, Any, List, Optional, Union
+from typing import TYPE_CHECKING, Any
 
 if TYPE_CHECKING:  # pragma: no cover
     from .audit_trail import AuditTrail
@@ -76,7 +76,7 @@ class VerificationReport:
     valid: bool
     packet_count: int
     checked_at: str
-    findings: List[Finding] = field(default_factory=list)
+    findings: list[Finding] = field(default_factory=list)
 
     def to_dict(self) -> dict:
         return {
@@ -96,13 +96,13 @@ class Verifier:
     ``signature`` field; every value is independently recomputed and
     compared."""
 
-    def __init__(self, secret: Optional[Union[bytes, str]] = None) -> None:
+    def __init__(self, secret: bytes | str | None = None) -> None:
         if isinstance(secret, str):
             secret = secret.encode("utf-8")
-        self.secret: Optional[bytes] = secret
+        self.secret: bytes | None = secret
 
-    def verify_packets(self, packets: List[dict]) -> VerificationReport:
-        findings: List[Finding] = []
+    def verify_packets(self, packets: list[dict]) -> VerificationReport:
+        findings: list[Finding] = []
         expected_prev_hash = GENESIS_HASH
 
         for position, packet in enumerate(packets):
@@ -182,10 +182,10 @@ class Verifier:
     def verify_json(self, data: str) -> VerificationReport:
         return self.verify_packets(json.loads(data))
 
-    def verify_file(self, path: Union[str, Path]) -> VerificationReport:
+    def verify_file(self, path: str | Path) -> VerificationReport:
         return self.verify_json(Path(path).read_text(encoding="utf-8"))
 
-    def verify_trail(self, audit_trail: "AuditTrail") -> VerificationReport:
+    def verify_trail(self, audit_trail: AuditTrail) -> VerificationReport:
         """Convenience entry point for verifying a live ``AuditTrail`` in-process.
 
         Still only ever inspects exported plain dicts — the verifier never

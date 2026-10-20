@@ -18,9 +18,9 @@ from __future__ import annotations
 
 import json
 import sys
+from collections.abc import Callable
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Callable, List, Tuple
 
 ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
@@ -33,7 +33,7 @@ from src.verifier import Verifier  # noqa: E402
 JOURNAL_PATH = ROOT / ".rig" / ".smoke-journal.json"
 MUTATION_FIELDS = ["output", "confidence", "action", "timestamp", "input"]
 
-ScenarioResult = Tuple[bool, str]
+ScenarioResult = tuple[bool, str]
 Scenario = Callable[[int], ScenarioResult]
 
 
@@ -253,7 +253,7 @@ def scenario_signature_integrity(hardening_level: int) -> ScenarioResult:
     return True, f"correct key verified, {len(wrong_keys)} wrong key(s) correctly rejected"
 
 
-SCENARIOS: List[Tuple[str, Scenario]] = [
+SCENARIOS: list[tuple[str, Scenario]] = [
     ("auto_execute", scenario_auto_execute),
     ("validate_band", scenario_validate_band),
     ("escalation", scenario_escalation),

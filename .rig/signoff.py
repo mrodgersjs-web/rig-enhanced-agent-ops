@@ -29,7 +29,7 @@ def main(argv: list) -> int:
         )
         return 2
 
-    results = {name: (code == "0") for name, code in zip(LAYER_NAMES, argv[1:])}
+    results = {name: (code == "0") for name, code in zip(LAYER_NAMES, argv[1:], strict=False)}
     all_pass = all(results.values())
 
     report = {
