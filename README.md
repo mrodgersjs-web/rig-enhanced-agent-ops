@@ -5,7 +5,7 @@ independent verifier can check without trusting the process that wrote it. For t
 whose agents send money, delete data, or deploy code and who need proof of exactly
 what ran, what did not, and why.
 
-[![CI](https://github.com/mrodgersjs-web/rig-enhanced-agent-ops/actions/workflows/ci.yml/badge.svg)](https://github.com/mrodgersjs-web/rig-enhanced-agent-ops/actions/workflows/ci.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/mrodgersjs-web/rig-enhanced-agent-ops/ci.yml?branch=main&label=CI)](https://github.com/mrodgersjs-web/rig-enhanced-agent-ops/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 

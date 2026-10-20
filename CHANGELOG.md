@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- This commit switches the README CI badge to the shields.io workflow status URL and adds a 15 minute timeout to both workflow jobs.
 - This commit adds .github/copilot-instructions.md describing the gate, trail, and verifier modules, the pytest and ruff commands, and the truth rule for numbers in docs.
 - This commit adds .github/CODEOWNERS, which assigns @mrodgersjs-web as the code owner for every file in the repo.
 
