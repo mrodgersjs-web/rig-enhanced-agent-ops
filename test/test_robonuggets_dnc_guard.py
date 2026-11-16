@@ -3,7 +3,7 @@ import sys
 import unittest
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "src"))
-from robonuggets_ops.dnc_guard import evaluate_outreach_target
+from robonuggets_ops.dnc_guard import check_sender_lane_ready, evaluate_outreach_target
 
 
 class TestRobonuggetsDncGuard(unittest.TestCase):
@@ -24,6 +24,20 @@ class TestRobonuggetsDncGuard(unittest.TestCase):
         self.assertTrue(jpmc["allowed"] and jpmc["atsHostCarveOut"])
         self.assertTrue(ucsf["allowed"] and ucsf["atsHostCarveOut"])
         self.assertTrue(coherent["allowed"] and coherent["atsHostCarveOut"])
+
+
+    def test_sender_stop_and_sha12_guards(self) -> None:
+        import tempfile
+        with tempfile.NamedTemporaryFile() as tf:
+            res_stop = check_sender_lane_ready(stop_file_path=tf.name, template_sha12="abc123def456", approved_sha12="abc123def456")
+            self.assertFalse(res_stop["ready"])
+            self.assertFalse(res_stop["auto_send"])
+        res_mismatch = check_sender_lane_ready(stop_file_path="/nonexistent/STOP", template_sha12="abc123def456", approved_sha12="000000000000")
+        self.assertFalse(res_mismatch["ready"])
+        res_ok = check_sender_lane_ready(stop_file_path="/nonexistent/STOP", template_sha12="abc123def456", approved_sha12="abc123def456")
+        self.assertTrue(res_ok["ready"])
+        self.assertFalse(res_ok["auto_send"])
+        self.assertEqual(res_ok["log_channel"], "jake-owen")
 
 
 if __name__ == "__main__":
