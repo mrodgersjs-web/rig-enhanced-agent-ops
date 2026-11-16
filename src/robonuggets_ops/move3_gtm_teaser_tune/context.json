@@ -1,0 +1,63 @@
+{
+  "move": "move3",
+  "status": "complete",
+  "deliverables": [
+    {
+      "name": "working_teaser_generator",
+      "module": "move3_gtm_teaser_tune.pack.generate_working_teaser",
+      "src": "classroom/agents-as-a-service/1-cold-outreach-that-works"
+    },
+    {
+      "name": "touch1_link_free_guard",
+      "module": "move3_gtm_teaser_tune.pack.touch1_link_free_guard",
+      "src": "classroom/agents-as-a-service/1-cold-outreach-that-works"
+    },
+    {
+      "name": "five_touch_spaced_distinct_angle_followup",
+      "module": "move3_gtm_teaser_tune.pack.generate_followup_sequence",
+      "src": "classroom/agents-as-a-service/1-cold-outreach-that-works"
+    },
+    {
+      "name": "annual_bleed_calculator",
+      "module": "move3_gtm_teaser_tune.pack.annual_bleed",
+      "src": "classroom/agents-as-a-service/2-discovery-that-sells"
+    },
+    {
+      "name": "kickoff_contract_checker",
+      "module": "move3_gtm_teaser_tune.pack.check_kickoff_contract",
+      "src": "classroom/agents-as-a-service/2-the-integrate-phase"
+    },
+    {
+      "name": "tune_report_1_slide_5_field",
+      "module": "move3_gtm_teaser_tune.pack.build_tune_report",
+      "src": "classroom/agents-as-a-service/3-the-tune-phase-results-reporting"
+    },
+    {
+      "name": "retainer_tiers_3",
+      "module": "move3_gtm_teaser_tune.pack.retainer_tiers",
+      "src": "classroom/agents-as-a-service/1-expanding-with-existing-clients"
+    }
+  ],
+  "citations": [
+    "classroom/agents-as-a-service/1-cold-outreach-that-works",
+    "classroom/agents-as-a-service/2-discovery-that-sells",
+    "classroom/agents-as-a-service/2-the-integrate-phase",
+    "classroom/agents-as-a-service/3-the-tune-phase-results-reporting",
+    "classroom/agents-as-a-service/1-expanding-with-existing-clients"
+  ],
+  "cited_sources": [
+    "src: classroom/agents-as-a-service/1-cold-outreach-that-works",
+    "src: classroom/agents-as-a-service/2-discovery-that-sells",
+    "src: classroom/agents-as-a-service/2-the-integrate-phase",
+    "src: classroom/agents-as-a-service/3-the-tune-phase-results-reporting",
+    "src: classroom/agents-as-a-service/1-expanding-with-existing-clients"
+  ],
+  "gates": {
+    "1-dnc": "every outreach generator first calls dnc_guard.evaluate_outreach_target (No Oracle + Matt Colmia block + ATS-host carve-out); a blocked target produces no draft",
+    "gate-d": "all outputs are draft_only; nothing sends without Mike's exact-text approval (check_sender_lane_ready sha12 match + gmail-sender STOP brake)"
+  },
+  "jev": {
+    "route": "CODE",
+    "note": "Move 3 artifacts are deterministic local drafts; no semantic send decision is taken here. The send decision stays behind Gate-D (HUMAN lane)."
+  }
+}

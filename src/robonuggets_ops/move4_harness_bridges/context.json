@@ -1,0 +1,64 @@
+{
+  "move": "move4",
+  "status": "complete",
+  "deliverables": [
+    {
+      "name": "thin_bridge_generator_6_tools",
+      "module": "move4_harness_bridges.bridges.generate_bridges",
+      "src": "classroom/community-vault/j8-codex-agents-md"
+    },
+    {
+      "name": "bridge_thin_lint_no_l1_duplication",
+      "module": "move4_harness_bridges.bridges.lint_bridge",
+      "src": "classroom/claude-code-mastery/2-context-control"
+    },
+    {
+      "name": "no_oracle_ats_carve_out_gate_d_jev_invariants",
+      "module": "move4_harness_bridges.bridges.bridge_invariants",
+      "src": "classroom/community-vault/j8-codex-agents-md"
+    },
+    {
+      "name": "session_end_edit_delta_calibrator",
+      "module": "move4_harness_bridges.bridges.calibrate_edit_deltas",
+      "src": "classroom/claude-code-mastery/1-skills"
+    },
+    {
+      "name": "linted_patch_proposals_never_raw_l1",
+      "module": "move4_harness_bridges.bridges.lint_patch_proposal",
+      "src": "classroom/claude-code-mastery/1-skills"
+    },
+    {
+      "name": "outlier_baseline_multiplier_taste_cart",
+      "module": "move4_harness_bridges.bridges.taste_cart_update",
+      "src": "classroom/ai-content-accelerator/module-12-finding-outliers"
+    },
+    {
+      "name": "idea_source_taste_cart_updates",
+      "module": "move4_harness_bridges.bridges.taste_cart_update",
+      "src": "classroom/ai-content-accelerator/module-11-idea-sources"
+    }
+  ],
+  "citations": [
+    "classroom/community-vault/j8-codex-agents-md",
+    "classroom/claude-code-mastery/2-context-control",
+    "classroom/claude-code-mastery/1-skills",
+    "classroom/ai-content-accelerator/module-12-finding-outliers",
+    "classroom/ai-content-accelerator/module-11-idea-sources"
+  ],
+  "cited_sources": [
+    "src: classroom/community-vault/j8-codex-agents-md",
+    "src: classroom/claude-code-mastery/2-context-control",
+    "src: classroom/claude-code-mastery/1-skills",
+    "src: classroom/ai-content-accelerator/module-12-finding-outliers",
+    "src: classroom/ai-content-accelerator/module-11-idea-sources"
+  ],
+  "gates": {
+    "1-dnc": "no_oracle preserved in every bridge with the ATS-host carve-out (oraclecloud.com / taleo.net + known employer) from dnc_guard; blocked targets produce no outreach draft",
+    "gate-d": "all outputs are draft_only; bridges, patch proposals and taste-cart updates change nothing without Mike's exact-text approval",
+    "jev-before-done": "nothing is marked done before the Jev route fires; move4 artifacts are deterministic local drafts (route CODE)"
+  },
+  "jev": {
+    "route": "CODE",
+    "note": "Move 4 artifacts are deterministic local generators and lints; no semantic send or publish decision is taken here. Outward action stays behind Gate-D (HUMAN lane)."
+  }
+}

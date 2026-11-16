@@ -1,0 +1,87 @@
+{
+  "move": "Move 1: ARMS + Gate-D 5-Axis Routine Auditor, Dry-Run Enforcer & 3-Slot Consolidator",
+  "status": "complete",
+  "deliverables": [
+    "ARMS + Gate-D 5-axis auditor (Action, Recall, Model, Self-Improvement, Gate-D/Jev) scoring 0-2 per axis, max 10, chat-shaped flag when action == 0",
+    "Pre-schedule validator blocking cron/RRULE arming unless manual_dry_runs_passed >= 1, idempotent_writes == True, max_retries <= 3, token_ceiling > 0, watched_failure_channel non-empty",
+    "3-Mike-Time-slot consolidator grouping routine deliverables into morning/midday/evening single-inbox digests with a batched Gate-D yes-queue",
+    "CLI entrypoint (--json) + unittest suite + context.json with valid cited_sources passing verify_gates.py"
+  ],
+  "citations": [
+    "src: classroom/hermes-agent-os/m3-the-arms-framework-audit-any-ai-tool",
+    "src: classroom/claude-code-mastery/4-scheduled-tasks",
+    "src: classroom/hermes-agent-os/m5-your-morning-briefing-first-scheduled-task"
+  ],
+  "cited_sources": [
+    {
+      "id": "src: classroom/hermes-agent-os/m3-the-arms-framework-audit-any-ai-tool",
+      "supports": "ARMS four-axis audit (Action, Recall, Model, Self-Improvement) of any AI tool; chat-shaped loop = action == 0"
+    },
+    {
+      "id": "src: classroom/claude-code-mastery/4-scheduled-tasks",
+      "supports": "Pre-schedule dry-run, idempotence, retry cap, token ceiling and watched failure channel before arming cron/RRULE"
+    },
+    {
+      "id": "src: classroom/hermes-agent-os/m5-your-morning-briefing-first-scheduled-task",
+      "supports": "Morning-briefing pattern: routine deliverables land in a single per-slot inbox digest, approvals batched into one yes-queue"
+    }
+  ],
+  "gates": [
+    "arms_5_axis_score",
+    "chat_shaped_flag",
+    "pre_schedule_arm_validator",
+    "slot_digest_consolidation",
+    "batch_gate_d_yes_queue",
+    "verify_gates.py"
+  ],
+  "jev": {
+    "gate_d_jev_axis": "5th audit axis: Gate-D/Jev compliance scored 0-2 alongside the four ARMS axes",
+    "batch_gate_d": "outward approvals collected into one Gate-D yes-queue per digest run"
+  },
+  "sample_routines": [
+    {
+      "id": "r-brief",
+      "name": "morning-briefing",
+      "slot": "morning",
+      "actions": ["collect-kpis", "write-brief"],
+      "action_receipts": ["receipt-1.json", "receipt-2.json"],
+      "recall_reads": true,
+      "recall_writes": true,
+      "model": "qwen38-medium",
+      "model_fallback": "minimax-flash",
+      "feedback_log": "kpi-trail.jsonl",
+      "feedback_applied": "tuned-prompt-v2.md",
+      "gate_d": true,
+      "jev": true,
+      "deliverables": ["brief.md"],
+      "gate_d_actions": [],
+      "schedule": {
+        "kind": "cron",
+        "rrule": "FREQ=DAILY;BYHOUR=7",
+        "manual_dry_runs_passed": 2,
+        "idempotent_writes": true,
+        "max_retries": 3,
+        "token_ceiling": 20000,
+        "watched_failure_channel": "#rig-alerts"
+      }
+    },
+    {
+      "id": "r-chatter",
+      "name": "chatty-helper",
+      "slot": "midday",
+      "actions": [],
+      "action_receipts": [],
+      "recall_reads": false,
+      "recall_writes": false,
+      "model": "qwen38-medium",
+      "model_fallback": "",
+      "feedback_log": "",
+      "feedback_applied": "",
+      "gate_d": false,
+      "jev": false,
+      "deliverables": ["chat-log.md"],
+      "gate_d_actions": [],
+      "schedule": {"kind": "manual"}
+    }
+  ]
+}

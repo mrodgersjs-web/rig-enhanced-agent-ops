@@ -1,0 +1,188 @@
+{
+  "schema_version": "move2.nod-blueprint.v1",
+  "name": "move2_nod_twenty_reply_trigger",
+  "pipeline": "nod/n8n -> jev -> twenty-crm -> aside-gate-d",
+  "move": "move2_nod_twenty_reply",
+  "send_policy": {
+    "draft_only": true,
+    "send_enabled": false,
+    "clients_ai_send": false,
+    "clients_ai_endpoint": "http://127.0.0.1:3211",
+    "approval": "exact-text",
+    "note": "Draft-only everywhere. Rooms never auto-send; the only send door is human exact-text Gate-D approval (dnc_guard.check_sender_lane_ready, sender STOP brake respected)."
+  },
+  "deterministic_control_plane": {
+    "separation": "pagination/retries/sleeps live ONLY here and in deterministic nodes; schema-locked AI nodes carry none of them (src: classroom/automation-blueprints/n0-how-to-set-up-ai-agents-in-n8n)",
+    "pagination": {
+      "owner": "n2_paginate_threads",
+      "strategy": "cursor",
+      "page_size": 50,
+      "max_pages": 20
+    },
+    "retries": {
+      "max_retries": 3,
+      "backoff_seconds": 2,
+      "on": "transient_only",
+      "idempotency_key": "reply_id|event_id",
+      "rationale": "bounded retries for reliable agent runs (src: classroom/automation-blueprints/n1-building-reliable-rag-agents-in-n8n)"
+    },
+    "sleeps": {
+      "owner": "deterministic nodes only",
+      "rate_limit_seconds": 1,
+      "between_pages_seconds": 0.5
+    }
+  },
+  "nodes": [
+    {
+      "id": "n1_trigger_inbound_reply",
+      "kind": "deterministic",
+      "type": "trigger",
+      "description": "Inbound reply arrives on a thread; deterministic trigger, no AI."
+    },
+    {
+      "id": "n2_paginate_threads",
+      "kind": "deterministic",
+      "type": "pagination",
+      "description": "Cursor pagination over reply threads. Pagination lives here, never in an AI node."
+    },
+    {
+      "id": "n3_dnc_gate_reply",
+      "kind": "deterministic",
+      "type": "gate",
+      "calls": ["robonuggets_ops.dnc_guard.evaluate_outreach_target"],
+      "description": "1-dnc gate on every reply BEFORE classification. Blocks Oracle, Oracle Health, Cerner, Matt Colmia (even blank company); UCSF/JPMorganChase/Coherent on *.oraclecloud.com pass under the ATS-host carve-out."
+    },
+    {
+      "id": "n4_jev_reply_classification",
+      "kind": "ai_schema_locked",
+      "type": "judgment",
+      "model_lane": "jev-system1",
+      "description": "Typed Jev judgment for reply intent. Output is schema-locked; deterministic code consumes it. Fail closed: classifier unreachable => reply deferred untouched, never guessed.",
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "reply_class": {
+            "type": "string",
+            "enum": ["hostile", "unsubscribe", "bounce", "out_of_office", "objection", "not_now", "referral", "meeting_request", "interested", "blocked", "other"]
+          },
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "signals": {"type": "array", "items": {"type": "string"}}
+        },
+        "required": ["reply_class", "confidence", "signals"],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "n5_build_reply_record",
+      "kind": "deterministic",
+      "type": "transform",
+      "calls": ["robonuggets_ops.move2_nod_twenty_reply.pipeline.classify_reply"],
+      "description": "Schema-locked reply record assembly (deterministic fallback + normalizer for the Jev judgment)."
+    },
+    {
+      "id": "n6_twenty_contact_brief",
+      "kind": "deterministic",
+      "type": "transform",
+      "calls": ["robonuggets_ops.move2_nod_twenty_reply.pipeline.build_contact_brief"],
+      "description": "Twenty CRM contact brief (staged upsert_contact only; write_enabled=False). Re-runs the DNC gate on contact fields."
+    },
+    {
+      "id": "n7_draft_reply_authoring",
+      "kind": "ai_schema_locked",
+      "type": "authoring",
+      "model_lane": "frontier",
+      "description": "Drafts the reply body under a locked schema. Draft only: nothing here sends, and the draft is gated by Gate-D exact-text approval downstream.",
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "subject": {"type": "string"},
+          "body": {"type": "string"},
+          "tone": {"type": "string", "enum": ["warm", "direct", "brief"]}
+        },
+        "required": ["subject", "body", "tone"],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "n8_gate_d_card_stage",
+      "kind": "deterministic",
+      "type": "stage",
+      "calls": ["robonuggets_ops.move2_nod_twenty_reply.pipeline.build_gate_d_card"],
+      "description": "Aside Gate-D staged approval card: draft_only=True, send_enabled=False, clients_ai_send=False. Human exact-text approval is the only send door; sender STOP brake via check_sender_lane_ready.",
+      "send_enabled": false
+    },
+    {
+      "id": "n9_trigger_event_intake",
+      "kind": "deterministic",
+      "type": "trigger",
+      "description": "Fresh-domain trigger event (hiring/funding/product_launch/...) enters the lead lane. Deterministic intake, no AI."
+    },
+    {
+      "id": "n10_dnc_gate_lead",
+      "kind": "deterministic",
+      "type": "gate",
+      "calls": ["robonuggets_ops.dnc_guard.evaluate_outreach_target"],
+      "description": "1-dnc gate on every lead BEFORE scoring."
+    },
+    {
+      "id": "n11_jev_trigger_relevance",
+      "kind": "ai_schema_locked",
+      "type": "judgment",
+      "model_lane": "jev-system1",
+      "description": "Typed Jev judgment classifying the trigger event and its evidence. Schema-locked; the deterministic scorer consumes it.",
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "event_type": {
+            "type": "string",
+            "enum": ["hiring", "funding", "product_launch", "tech_adoption", "leadership_change", "domain_registration", "expansion", "regulatory", "other"]
+          },
+          "evidence": {"type": "string"},
+          "source_url": {"type": "string"}
+        },
+        "required": ["event_type", "evidence"],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "n12_score_trigger_event",
+      "kind": "deterministic",
+      "type": "transform",
+      "calls": ["robonuggets_ops.move2_nod_twenty_reply.pipeline.score_trigger_event"],
+      "description": "Fresh-domain trigger-event scorer (src: classroom/community-vault/the-30k-ai-app-breakdown-2026-08-03): base weight by event type, freshness decay on age_days, evidence + domain-match bonuses, band hot/warm/cold."
+    },
+    {
+      "id": "n13_queue_qualified_lead",
+      "kind": "deterministic",
+      "type": "queue",
+      "description": "Qualified lead staged into the Twenty CRM lead queue (staged rows only; writes stay behind Gate-D)."
+    },
+    {
+      "id": "n14_drop_record",
+      "kind": "deterministic",
+      "type": "terminal",
+      "description": "DNC-blocked replies and leads are dropped here: no record, no draft, no CRM write."
+    }
+  ],
+  "edges": [
+    {"from": "n1_trigger_inbound_reply", "to": "n2_paginate_threads"},
+    {"from": "n2_paginate_threads", "to": "n3_dnc_gate_reply"},
+    {"from": "n3_dnc_gate_reply", "to": "n4_jev_reply_classification", "when": "allowed"},
+    {"from": "n3_dnc_gate_reply", "to": "n14_drop_record", "when": "blocked"},
+    {"from": "n4_jev_reply_classification", "to": "n5_build_reply_record"},
+    {"from": "n5_build_reply_record", "to": "n6_twenty_contact_brief"},
+    {"from": "n6_twenty_contact_brief", "to": "n7_draft_reply_authoring"},
+    {"from": "n7_draft_reply_authoring", "to": "n8_gate_d_card_stage"},
+    {"from": "n9_trigger_event_intake", "to": "n10_dnc_gate_lead"},
+    {"from": "n10_dnc_gate_lead", "to": "n11_jev_trigger_relevance", "when": "allowed"},
+    {"from": "n10_dnc_gate_lead", "to": "n14_drop_record", "when": "blocked"},
+    {"from": "n11_jev_trigger_relevance", "to": "n12_score_trigger_event"},
+    {"from": "n12_score_trigger_event", "to": "n13_queue_qualified_lead"}
+  ],
+  "cited_sources": [
+    "src: classroom/community-vault/the-30k-ai-app-breakdown-2026-08-03",
+    "src: classroom/automation-blueprints/n0-how-to-set-up-ai-agents-in-n8n",
+    "src: classroom/automation-blueprints/n1-building-reliable-rag-agents-in-n8n",
+    "src: classroom/automation-blueprints/n10-automate-faceless-channels-full-setup-free-tools"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "move": "move2_nod_twenty_reply",
+  "status": "complete",
+  "deliverables": [
+    "Schema-locked inbound reply classifier (pipeline.classify_reply) — deterministic keyword scoring, fixed record schema, typed state for Jev (fail closed: classifier unreachable => reply deferred, never guessed).",
+    "Twenty CRM contact brief builder (pipeline.build_contact_brief) — staged upsert_contact only, write_enabled=False, DNC gate re-run on contact fields.",
+    "Aside Gate-D staged approval card builder (pipeline.build_gate_d_card) — draft-only: send_enabled=False, clients_ai_send=False, human exact-text approval, sender STOP brake via check_sender_lane_ready.",
+    "Fresh-domain trigger-event scorer (pipeline.score_trigger_event) — event-type base weight, freshness decay on age_days, evidence + domain-match bonuses, band hot/warm/cold.",
+    "Deterministic Nod/n8n blueprint (nod_workflow_blueprint.json) separating pagination/retries/sleeps (deterministic_control_plane, max_retries=3) from schema-locked AI nodes (additionalProperties=false output schemas)."
+  ],
+  "citations": [
+    {
+      "source": "src: classroom/community-vault/the-30k-ai-app-breakdown-2026-08-03",
+      "claim": "Fresh-domain trigger-event scoring for lead qualification (score_trigger_event, n12_score_trigger_event)."
+    },
+    {
+      "source": "src: classroom/automation-blueprints/n0-how-to-set-up-ai-agents-in-n8n",
+      "claim": "n8n AI-agent node design: deterministic control flow separated from AI nodes (deterministic_control_plane vs ai_schema_locked nodes)."
+    },
+    {
+      "source": "src: classroom/automation-blueprints/n1-building-reliable-rag-agents-in-n8n",
+      "claim": "Reliable agent runs: bounded retries (max_retries=3), schema-locked AI outputs, idempotent writes keyed on reply_id/event_id."
+    },
+    {
+      "source": "src: classroom/automation-blueprints/n10-automate-faceless-channels-full-setup-free-tools",
+      "claim": "Pagination/retries/sleeps owned by the deterministic control plane, never by AI nodes."
+    }
+  ],
+  "cited_sources": [
+    "src: classroom/community-vault/the-30k-ai-app-breakdown-2026-08-03",
+    "src: classroom/automation-blueprints/n0-how-to-set-up-ai-agents-in-n8n",
+    "src: classroom/automation-blueprints/n1-building-reliable-rag-agents-in-n8n",
+    "src: classroom/automation-blueprints/n10-automate-faceless-channels-full-setup-free-tools"
+  ],
+  "gates": {
+    "dnc": {
+      "gate": "1-dnc",
+      "enforced_by": "robonuggets_ops.dnc_guard.evaluate_outreach_target",
+      "on_paths": ["classify_reply", "build_contact_brief", "build_gate_d_card", "score_trigger_event"],
+      "blocked": ["Oracle", "Oracle Health", "Cerner", "Matt Colmia (even with blank company)"],
+      "allowed": ["UCSF on *.oraclecloud.com", "JPMorganChase on *.oraclecloud.com", "Coherent on *.oraclecloud.com"],
+      "carve_out": "atsHostCarveOut: employer required alongside the ATS host domain"
+    },
+    "gate_d": {
+      "channel": "aside-gate-d",
+      "draft_only": true,
+      "send_enabled": false,
+      "approval": "human exact-text (APPROVE SEND <sha12>)",
+      "sender_lane": "check_sender_lane_ready — STOP brake + approved_sha12 == template_sha12; auto_send always False"
+    },
+    "clients_ai_non_send": {
+      "endpoint": "http://127.0.0.1:3211",
+      "clients_ai_send": false
+    },
+    "blueprint_separation": "pagination/retries/sleeps in deterministic_control_plane only; AI nodes schema-locked (additionalProperties=false); validator: pipeline.validate_blueprint",
+    "verify": "python3 src/robonuggets_ops/verify_gates.py"
+  },
+  "jev": {
+    "routed": true,
+    "fail_closed": true,
+    "decisions": ["reply_intent_class", "trigger_event_relevance", "reply_draft_quality"],
+    "policy": "Typed Jev judgment before any frontier LLM call; classifier unreachable/timed out/unparseable => defer the reply untouched or escalate — never guess a verdict locally.",
+    "nodes": ["n4_jev_reply_classification", "n11_jev_trigger_relevance"]
+  }
+}
