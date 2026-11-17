@@ -1,0 +1,247 @@
+{
+  "clients_ai_calls": 0,
+  "dnc": {
+    "blocked_companies": {
+      "carve_out": "Oracle as an ATS HOST is not Oracle: a careers site hosted on Oracle HCM / oraclecloud (e.g. UCSF on Oracle Cloud, JPMorganChase on jpmc.fa.oraclecloud.com) stays open. The employer named in the company field decides.",
+      "companies": [
+        "Oracle",
+        "Oracle Health",
+        "Oracle America",
+        "Oracle Corporation",
+        "Cerner (now Oracle Health)"
+      ],
+      "covers": [
+        "job applications",
+        "LinkedIn connection requests",
+        "LinkedIn notes and DMs",
+        "email",
+        "recruiter and hiring-manager contact"
+      ],
+      "named_people": [
+        "Matt Colmia (Oracle) - never reach out, any channel, Mike 2026-11-16"
+      ],
+      "rule": "Mike 2026-11-16, verbatim: 'never reach out to oracle for a job or for connections. Do NOT reach out to Matt Colmia from oracle. This is a rule and doctrine.' Extends the 2026-10-22 'No oracle' applications ban to networking."
+    },
+    "companies_count": 40,
+    "loaded_read_only": true,
+    "people_count": 73,
+    "rule_file": "/Users/rig128gb/.applypilot/do-not-contact.json"
+  },
+  "dry_run": true,
+  "gates": {
+    "clients_ai_non_send": {
+      "clients_ai_send": false,
+      "endpoint": "http://127.0.0.1:3211"
+    },
+    "dnc": {
+      "carve_out": "ATS host (oraclecloud.com|taleo.net) without an employer in company -> refused; the employer field decides",
+      "enforced_by": "src/robonuggets_ops/dnc_guard.py:evaluate_outreach_target",
+      "gate": "1-dnc",
+      "rule_file": "/Users/rig128gb/.applypilot/do-not-contact.json"
+    },
+    "gate_d": {
+      "approval": {
+        "approver": "human",
+        "command": "APPROVE SEND <sha12>",
+        "kind": "exact-text"
+      },
+      "channel": "aside-gate-d",
+      "draft_only": true,
+      "sender_lane": "check_sender_lane_ready \u2014 STOP brake + approved_sha12 == template_sha12; auto_send always False"
+    }
+  },
+  "generated_at": "2026-11-17T16:08:56.628233+00:00",
+  "git_head": "d36903a35a259cf4be8fed1f550eabfd0aa1a804",
+  "matrix": [
+    {
+      "actual": {
+        "allowed": false,
+        "atsHostCarveOut": false,
+        "reason": "blocked: employer 'Oracle' is on the do-not-contact employer list"
+      },
+      "expected": {
+        "allowed": false,
+        "atsHostCarveOut": false,
+        "reason": "blocked: employer 'Oracle' is on the do-not-contact employer list"
+      },
+      "input": {
+        "call": "dnc_guard.evaluate_outreach_target(company='Oracle', person_name='Jane Recruiter')",
+        "rule_file_blocks_company": true
+      },
+      "name": "oracle_blocked",
+      "pass": true
+    },
+    {
+      "actual": {
+        "allowed": false,
+        "atsHostCarveOut": false,
+        "reason": "blocked: person 'Matt Colmia' is on the do-not-contact person list"
+      },
+      "expected": {
+        "allowed": false,
+        "atsHostCarveOut": false,
+        "reason": "blocked: person 'Matt Colmia' is on the do-not-contact person list"
+      },
+      "input": {
+        "call": "dnc_guard.evaluate_outreach_target(company='', person_name='Matt Colmia')",
+        "rule_file_lists_person": true
+      },
+      "name": "mattcolmia_blank_company",
+      "pass": true
+    },
+    {
+      "actual": {
+        "allowed": true,
+        "atsHostCarveOut": true,
+        "reason": "allowed"
+      },
+      "expected": {
+        "allowed": true,
+        "atsHostCarveOut": true,
+        "reason": "allowed"
+      },
+      "input": {
+        "call": "dnc_guard.evaluate_outreach_target(company='UCSF', url='https://ucsf.fa.us2.oraclecloud.com/hcmUI')"
+      },
+      "name": "ucsf_ats",
+      "pass": true
+    },
+    {
+      "actual": {
+        "allowed": true,
+        "atsHostCarveOut": true,
+        "reason": "allowed"
+      },
+      "expected": {
+        "allowed": true,
+        "atsHostCarveOut": true,
+        "reason": "allowed"
+      },
+      "input": {
+        "call": "dnc_guard.evaluate_outreach_target(company='JPMorganChase', url='https://jpmc.fa.oraclecloud.com/hcmUI')"
+      },
+      "name": "jpmc_ats",
+      "pass": true
+    },
+    {
+      "actual": {
+        "allowed": false,
+        "atsHostCarveOut": false,
+        "reason": "ats_host_missing_employer"
+      },
+      "expected": {
+        "allowed": false,
+        "atsHostCarveOut": false,
+        "reason": "ats_host_missing_employer"
+      },
+      "input": {
+        "call": "dnc_guard.evaluate_outreach_target(company='', url='https://x.fa.oraclecloud.com/hcmUI')"
+      },
+      "name": "ats_missing_employer",
+      "pass": true
+    },
+    {
+      "actual": {
+        "crm_staged": true,
+        "next_action": "manual_review",
+        "reply_class": "other",
+        "send_enabled": false,
+        "write_enabled": false
+      },
+      "expected": {
+        "crm_staged": true,
+        "next_action": "manual_review",
+        "reply_class": "other",
+        "send_enabled": false,
+        "write_enabled": false
+      },
+      "input": {
+        "call": "classify_reply(vendor pitch) -> build_contact_brief -> build_gate_d_card",
+        "reply_keywords_hit": []
+      },
+      "name": "vendor_pitch_quarantined",
+      "pass": true
+    },
+    {
+      "actual": {
+        "mutate": false,
+        "reason": "terminal_state_preserved"
+      },
+      "expected": {
+        "mutate": false,
+        "reason": "terminal_state_preserved"
+      },
+      "input": {
+        "call": "twenty_stage_action('won'/'lost'/'do_not_contact'/'do-not-contact')",
+        "non_terminal_sample": {
+          "mutate": true,
+          "operation": "upsert_contact",
+          "staged": true,
+          "write_enabled": false
+        },
+        "states": {
+          "do-not-contact": {
+            "mutate": false,
+            "reason": "terminal_state_preserved"
+          },
+          "do_not_contact": {
+            "mutate": false,
+            "reason": "terminal_state_preserved"
+          },
+          "lost": {
+            "mutate": false,
+            "reason": "terminal_state_preserved"
+          },
+          "won": {
+            "mutate": false,
+            "reason": "terminal_state_preserved"
+          }
+        }
+      },
+      "name": "terminal_state_preserved",
+      "pass": true
+    }
+  ],
+  "move3_sample_bundle": {
+    "cited_sources": [
+      "src: classroom/agents-as-a-service/1-cold-outreach-that-works",
+      "src: classroom/agents-as-a-service/2-discovery-that-sells",
+      "src: classroom/agents-as-a-service/2-the-integrate-phase",
+      "src: classroom/agents-as-a-service/3-the-tune-phase-results-reporting",
+      "src: classroom/agents-as-a-service/1-expanding-with-existing-clients"
+    ],
+    "dir": "dist/gtm_pack_sample",
+    "files": [
+      "working_teaser.json",
+      "bleed_report.json",
+      "followups.json",
+      "tune_report.json",
+      "manifest.json"
+    ]
+  },
+  "planted_failures": [
+    {
+      "expected_red": "matrix row 'mattcolmia_blank_company' fails (pass=false) \u2014 the blank company leaves no other block",
+      "green_when": "the person check is present (shipped dnc_guard)",
+      "mutation": "dnc_guard.BLOCKED_PEOPLE emptied (the person check removed)",
+      "name": "matt_colmia_blank_company_without_person_check",
+      "proven_in": "test/test_phase2_live_gtm.py::TestPlantedFailures::test_mattcolmia_person_check_is_load_bearing"
+    },
+    {
+      "expected_red": "validate_export fails (valid=false) naming preserve_terminal_states",
+      "green_when": "the shipped export carries twenty.preserve_terminal_states [won,lost,do_not_contact]",
+      "mutation": "twenty.preserve_terminal_states dropped from a copied export",
+      "name": "export_without_preserve_terminal_states",
+      "proven_in": "test/test_phase2_live_gtm.py::TestPlantedFailures::test_export_dropping_preserve_terminal_states_goes_red"
+    }
+  ],
+  "run_id": "live_gtm_phase2_dryrun_2026-11-16",
+  "sender_lane": {
+    "auto_send": false,
+    "log_channel": "jake-owen",
+    "ready": false,
+    "reason": "blocked: approved_sha12 must be non-empty and equal template_sha12"
+  },
+  "sends": 0,
+  "twenty_writes": 0
+}

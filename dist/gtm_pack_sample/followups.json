@@ -1,0 +1,120 @@
+{
+  "artifact": "followups.json",
+  "clients_ai_send": false,
+  "draft_only": true,
+  "gate_d": "draft_only: nothing sends without Mike's exact-text approval",
+  "generated_at": "2026-11-17T16:08:56.626347+00:00",
+  "input": {
+    "company": "UCSF",
+    "contact_name": "Jordan Lee",
+    "finding": "invoice data is re-keyed by hand between the portal and the ledger every week",
+    "recipient_domain": "",
+    "url": "https://ucsf.fa.us2.oraclecloud.com/hcmUI"
+  },
+  "opt_out_line": "If this isn't relevant, reply STOP and I won't follow up.",
+  "result": {
+    "blocked_by": {
+      "allowed": true,
+      "atsHostCarveOut": true,
+      "employer": "UCSF",
+      "gate": "1-dnc"
+    },
+    "gate_d": "draft_only: nothing sends without Mike's exact-text approval",
+    "ok": true,
+    "touches": [
+      {
+        "angle": "finding",
+        "day_offset": 0,
+        "gate_d": "draft_only: nothing sends without Mike's exact-text approval",
+        "link_free": true,
+        "text": "Touch 1: the audit of UCSF turned up invoice data is re-keyed by hand between the portal and the ledger every week \u2014 want me to send the write-up?",
+        "touch": 1
+      },
+      {
+        "angle": "question",
+        "day_offset": 3,
+        "gate_d": "draft_only: nothing sends without Mike's exact-text approval",
+        "link_free": true,
+        "text": "Touch 2: one question after the audit of UCSF \u2014 is invoice data is re-keyed by hand between the portal and the ledger every week already on your team's radar?",
+        "touch": 2
+      },
+      {
+        "angle": "proof",
+        "day_offset": 7,
+        "gate_d": "draft_only: nothing sends without Mike's exact-text approval",
+        "link_free": true,
+        "text": "Touch 3: a similar audit elsewhere turned invoice data is re-keyed by hand between the portal and the ledger every week into hours back per week \u2014 happy to show the before and after.",
+        "touch": 3
+      },
+      {
+        "angle": "insight",
+        "day_offset": 12,
+        "gate_d": "draft_only: nothing sends without Mike's exact-text approval",
+        "link_free": true,
+        "text": "Touch 4: the pattern behind invoice data is re-keyed by hand between the portal and the ledger every week usually hides in the handoffs \u2014 worth 15 minutes on where it sits at UCSF?",
+        "touch": 4
+      },
+      {
+        "angle": "permission_close",
+        "day_offset": 18,
+        "gate_d": "draft_only: nothing sends without Mike's exact-text approval",
+        "link_free": true,
+        "text": "Touch 5: closing the loop on invoice data is re-keyed by hand between the portal and the ledger every week \u2014 should I leave this with you, or is there a better person at UCSF?",
+        "touch": 5
+      }
+    ]
+  },
+  "send_enabled": false,
+  "touches": [
+    {
+      "angle": "finding",
+      "day_offset": 0,
+      "draft_text": "Touch 1: the audit of UCSF turned up invoice data is re-keyed by hand between the portal and the ledger every week \u2014 want me to send the write-up? If this isn't relevant, reply STOP and I won't follow up.",
+      "gate_d": "draft_only: nothing sends without Mike's exact-text approval",
+      "link_free": true,
+      "opt_out_line": "If this isn't relevant, reply STOP and I won't follow up.",
+      "text": "Touch 1: the audit of UCSF turned up invoice data is re-keyed by hand between the portal and the ledger every week \u2014 want me to send the write-up?",
+      "touch": 1
+    },
+    {
+      "angle": "question",
+      "day_offset": 3,
+      "draft_text": "Touch 2: one question after the audit of UCSF \u2014 is invoice data is re-keyed by hand between the portal and the ledger every week already on your team's radar? If this isn't relevant, reply STOP and I won't follow up.",
+      "gate_d": "draft_only: nothing sends without Mike's exact-text approval",
+      "link_free": true,
+      "opt_out_line": "If this isn't relevant, reply STOP and I won't follow up.",
+      "text": "Touch 2: one question after the audit of UCSF \u2014 is invoice data is re-keyed by hand between the portal and the ledger every week already on your team's radar?",
+      "touch": 2
+    },
+    {
+      "angle": "proof",
+      "day_offset": 7,
+      "draft_text": "Touch 3: a similar audit elsewhere turned invoice data is re-keyed by hand between the portal and the ledger every week into hours back per week \u2014 happy to show the before and after. If this isn't relevant, reply STOP and I won't follow up.",
+      "gate_d": "draft_only: nothing sends without Mike's exact-text approval",
+      "link_free": true,
+      "opt_out_line": "If this isn't relevant, reply STOP and I won't follow up.",
+      "text": "Touch 3: a similar audit elsewhere turned invoice data is re-keyed by hand between the portal and the ledger every week into hours back per week \u2014 happy to show the before and after.",
+      "touch": 3
+    },
+    {
+      "angle": "insight",
+      "day_offset": 12,
+      "draft_text": "Touch 4: the pattern behind invoice data is re-keyed by hand between the portal and the ledger every week usually hides in the handoffs \u2014 worth 15 minutes on where it sits at UCSF? If this isn't relevant, reply STOP and I won't follow up.",
+      "gate_d": "draft_only: nothing sends without Mike's exact-text approval",
+      "link_free": true,
+      "opt_out_line": "If this isn't relevant, reply STOP and I won't follow up.",
+      "text": "Touch 4: the pattern behind invoice data is re-keyed by hand between the portal and the ledger every week usually hides in the handoffs \u2014 worth 15 minutes on where it sits at UCSF?",
+      "touch": 4
+    },
+    {
+      "angle": "permission_close",
+      "day_offset": 18,
+      "draft_text": "Touch 5: closing the loop on invoice data is re-keyed by hand between the portal and the ledger every week \u2014 should I leave this with you, or is there a better person at UCSF? If this isn't relevant, reply STOP and I won't follow up.",
+      "gate_d": "draft_only: nothing sends without Mike's exact-text approval",
+      "link_free": true,
+      "opt_out_line": "If this isn't relevant, reply STOP and I won't follow up.",
+      "text": "Touch 5: closing the loop on invoice data is re-keyed by hand between the portal and the ledger every week \u2014 should I leave this with you, or is there a better person at UCSF?",
+      "touch": 5
+    }
+  ]
+}

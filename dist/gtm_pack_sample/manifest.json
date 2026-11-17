@@ -1,0 +1,22 @@
+{
+  "artifact": "manifest.json",
+  "artifacts": [
+    "working_teaser.json",
+    "bleed_report.json",
+    "followups.json",
+    "tune_report.json",
+    "manifest.json"
+  ],
+  "cited_sources": [
+    "src: classroom/agents-as-a-service/1-cold-outreach-that-works",
+    "src: classroom/agents-as-a-service/2-discovery-that-sells",
+    "src: classroom/agents-as-a-service/2-the-integrate-phase",
+    "src: classroom/agents-as-a-service/3-the-tune-phase-results-reporting",
+    "src: classroom/agents-as-a-service/1-expanding-with-existing-clients"
+  ],
+  "clients_ai_send": false,
+  "draft_only": true,
+  "gate_d": "draft_only: nothing sends without Mike's exact-text approval",
+  "generated_at": "2026-11-17T16:08:56.626347+00:00",
+  "send_enabled": false
+}

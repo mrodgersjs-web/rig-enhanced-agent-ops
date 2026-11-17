@@ -1,0 +1,2497 @@
+{
+  "blocked_armings": [
+    "sch_1m76816xcyyykzt70",
+    "sch_1m768fnjn3pxwjse1",
+    "sch_1m768fnjrmykcscpg",
+    "sch_1m768fnk8a30wc6cx",
+    "sch_1m768fnkcawt10v8d",
+    "sch_1m768fnkea42kwf5h",
+    "sch_1m768fnkkpsz6gqgn",
+    "sch_1m79973bq854nm4gk",
+    "sch_1m79gx6n6esegrd30",
+    "sch_1m7a761ybrcekn1r7",
+    "sch_1m7aca6czv2t4ysb3",
+    "sch_1m7akma3dzetrvxdv",
+    "sch_1m7atqttnypczccew",
+    "sch_1m7axa5bh64gcef0z",
+    "sch_1m7bfevsrpsyy79a0",
+    "sch_1m7bjtb0dyzhvddck",
+    "sch_1m7bkhfbpx8bwteaz",
+    "sch_1m7bkwvpkyne8qr73",
+    "sch_1m7bkz0qqqk0jtghp",
+    "sch_1m7bqabf6cc1c1tec",
+    "sch_1m7bwyjt2k3q0m0xs",
+    "sch_1m7ca4gg6x1vv7c3d",
+    "sch_1m7cq7rn819jjeysk",
+    "sch_1m7etcrn4djxycrcx",
+    "sch_1m7g1exkwzqgh4mka",
+    "sch_f51kns4m",
+    "sch_z7datp5d",
+    "sch_h1bbrx3c",
+    "sch_0z4xrazj",
+    "sch_04m059d1",
+    "sch_4npjdp80",
+    "sch_87hcv8j8",
+    "sch_zr855k1h",
+    "sch_70febk0k",
+    "sch_frbv9v5r",
+    "sch_1w258qqq"
+  ],
+  "consolidation": {
+    "digest_count": 2,
+    "gate_d_yes_queue": [],
+    "slots": {
+      "evening": {
+        "inbox": [
+          "press/press-target-list-2026-11-15.md"
+        ],
+        "routines": [
+          "sch_j29d7vtg"
+        ]
+      },
+      "midday": {
+        "inbox": [],
+        "routines": []
+      },
+      "morning": {
+        "inbox": [
+          "Workforce/conductor/board.md",
+          "kpi-daily.md",
+          "lanes/outreach/kpi-daily.md",
+          "/revenue-brief.md",
+          "/Users/rig96gb/Workforce/govclose/packets/FA701427SC432_whitepaper_DRAFT.md",
+          "Workforce/fleet/aside-control.md",
+          "Workforce/conductor/board.md",
+          "board.md",
+          "/Users/rig128gb/Workforce/model-platform/STATUS.md",
+          "STATUS.md",
+          "keep-set.json",
+          "/Users/rig128gb/Workforce/lanes/outreach/kpi-daily.md",
+          "/Users/rig128gb/Workforce/revenue/daily-feed.md",
+          "/Workforce/gtm/pulse-YYYY-MM-DD.md",
+          "lanes/outreach/kpi-daily.md",
+          "lanes/outreach/send-loop-state-2026-11-13.md",
+          "pipeline.md",
+          "revenue/plan-2026-11-13.md",
+          "/Workforce/gtm/intel-2026-11-13.md",
+          "/Workforce/ideas/YYYY-MM-DD-ideas.md",
+          "/ideo-NOT-DELIVERED.md",
+          "/ideo.md",
+          "_ASK.md",
+          "decisions.md",
+          "engines.md",
+          "/Workforce/academy/lessons.md",
+          "/Workforce/academy/lessons.md",
+          "skills/SYSTEM.md",
+          "intel/competitor-rundown-YYYY-MM-DD.md",
+          "/Workforce/revenue/denver100/batch1-status-2026-11-13.md",
+          "STATE.md",
+          "/Users/rig128gb/Workforce/clients-ai/STATE.md",
+          "STATE.md",
+          "/Workforce/comms/ACCESS-MAP.md",
+          "/Workforce/comms/needs-reply-2026-11-13.md",
+          "rank-history.json",
+          "Workforce/revenue/sales-genius-playbook.md",
+          "-NOT-DELIVERED.md",
+          "-brief.md",
+          "-ideas.md",
+          "/_ASK.md",
+          "/_chase.md",
+          "/ideo.md",
+          "council/README.md",
+          "decisions.md",
+          "engines.md",
+          "ideas/council/ideo.md",
+          "/owen-decisions-handoff.md",
+          "/Workforce/comms/email-time-baseline.md",
+          "/Workforce/comms/email-time-baseline.md",
+          "/Users/rig128gb/Workforce/governance/kpi-security-weekly.md",
+          "/leaked-key-scan.json",
+          "/Workforce/comms/calendar/README.md",
+          "ACCESS-MAP.md",
+          "calendar/aside-all.json",
+          "calendar/unified-agenda.md",
+          "/fleet-alarm.json",
+          "Workforce/governance/alarm-thresholds.json",
+          "/Workforce/comms/subscriptions-register.md",
+          "comms/weekly-review-YYYY-MM-DD.md",
+          "comms/weekly-review-format.md",
+          "jacob/jev-log.md",
+          "jacob/rules/contact-calendar.md",
+          "targets/top25.md",
+          "jacob/scorecard-2026-11-13.md",
+          "targets/top25.md",
+          "jacob/camps/calendar-2027.md",
+          "Workforce/legal/compliance-calendar.md",
+          "/Workforce/clients-ai/notes.md",
+          "clients/pilot-conversion.md",
+          "intel/objections.md",
+          "register.md",
+          "governance/retention-and-incident-policy.md",
+          "revenue/incidents.md",
+          "governance/retention-and-incident-policy.md",
+          "governance/retention-and-incident-policy.md",
+          "jev-verify.json",
+          "ledger.json",
+          "data/warm/ledger.json",
+          "intel/memo-2026-12.md",
+          "intel/objections.md",
+          "intel/techstack-2026-11-15.md",
+          "memo-YYYY-MM.md",
+          "access-matrix.md",
+          "governance/access-matrix.md",
+          "/Users/rig128gb/Workforce/revenue/denver100/vendor-bench-2026-11-13.md",
+          "vendor-bench-2026-11-13.md",
+          "/agent.json",
+          "/last-prompt.md",
+          "/ENG-R8-autonomy-7d.json",
+          "/Users/rig128gb/Workforce/dashboards/engineering.md",
+          "/Users/rig128gb/Workforce/model-platform/benchmark-routing.md",
+          "benchmark-sources-20261114.md",
+          "routes.json",
+          "Workforce/ideas/crazy-ideas-2026-11-13.md",
+          "projects/aside-inbox/README.md",
+          "/_ASK.md",
+          "/sage.md",
+          "ideas/decisions.md",
+          "revenue-targets-2026-11-12.md",
+          "/Workforce/dashboards/social-command-20261115.md",
+          "eden-analytics.json",
+          "/Workforce/dashboards/engineering.md",
+          "comms/ACCESS-MAP.md",
+          "/crazy-ideas-studios.md",
+          "_ASK.md",
+          "-auto.md",
+          "/Workforce/academy/cases-inbox.md",
+          "academy/training/runs/progress.md",
+          "idea-training/metric-log.md",
+          "ping-count.json",
+          "Workforce/jacob/post-state-final-2026-11-20-texts.md",
+          "academy/standards-receipts.md",
+          "agent-standards-2026-11-13.md",
+          "health-receipt.md",
+          "/receipt.md",
+          "sops/scribe-v3.md",
+          "sops/reel-v3.md",
+          "NOT-DELIVERED.md",
+          "academy/lessons.md",
+          "ideo-NOT-DELIVERED.md",
+          "/receipt.md",
+          "sources/2026-11-17/_chase.md",
+          "decisions.md",
+          "/_ASK.md",
+          "outcomes/ag_1m7bf10yfzvvmy8zz/2026-11-16/receipt.md",
+          "receipts/2026-11-17-brief.md",
+          "gtm/crm-rulings-apply-2026-11-13.md",
+          "outcomes/ag_1m7afmjejmb71n5b2/2026-11-16/kwp-install-receipt.md",
+          "/Workforce/model-platform/clients/STATUS.md",
+          "Workforce/outcomes/ag_1m7axg5846mx5ec6m/2026-11-17/ig-live-receipt.md",
+          "VETTING.md",
+          "academy/agency-agents/ROLLOUT.md",
+          "Workforce/outcomes/fleet-admitted-manifest.json",
+          "/Workforce/marketing/ads-ledger.md",
+          "/f1-spend.md",
+          "sops/finance-v3.md",
+          "-bbb-drill.md"
+        ],
+        "routines": [
+          "sch_1m76816xcyyykzt70",
+          "sch_1m768fnjn3pxwjse1",
+          "sch_1m768fnjrmykcscpg",
+          "sch_1m768fnk8a30wc6cx",
+          "sch_1m768fnkcawt10v8d",
+          "sch_1m768fnkea42kwf5h",
+          "sch_1m768fnkkpsz6gqgn",
+          "sch_1m79973bq854nm4gk",
+          "sch_1m799g02rgsdtjzb7",
+          "sch_1m79ap1dkkgx3wm0c",
+          "sch_1m79gx6n6esegrd30",
+          "sch_1m79np13hqdkqz8rw",
+          "sch_1m7a761ybrcekn1r7",
+          "sch_1m7a8epmd2ftwmdkq",
+          "sch_1m7a8epmgp9n0thne",
+          "sch_1m7a8qt856evknbkw",
+          "sch_1m7a949303q5w2fpk",
+          "sch_1m7aa0jgszw9kgt41",
+          "sch_1m7aca6czv2t4ysb3",
+          "sch_1m7ajt86htprt97hb",
+          "sch_1m7ajt86kck6jh60c",
+          "sch_1m7akma3dzetrvxdv",
+          "sch_1m7at7hpbkq2fcs86",
+          "sch_1m7atp1cajktm1hn1",
+          "sch_1m7atqttnypczccew",
+          "sch_1m7av7z7m7xpf3mng",
+          "sch_1m7axa5bh64gcef0z",
+          "sch_1m7b3f7khawngy8gm",
+          "sch_1m7b6bgh8hcqwvs70",
+          "sch_1m7bakhk0qep529b1",
+          "sch_1m7bd3sj8wjd24vrg",
+          "sch_1m7bdd86wjk5ppzz8",
+          "sch_1m7bdwb3pgjcq5f75",
+          "sch_1m7bfevsrpsyy79a0",
+          "sch_1m7bja5hmzkn24ska",
+          "sch_1m7bjavafqac7myc6",
+          "sch_1m7bjb60k61zzs3m6",
+          "sch_1m7bjtb0dyzhvddck",
+          "sch_1m7bkdt011ct7yk3d",
+          "sch_1m7bkhfbpx8bwteaz",
+          "sch_1m7bkwvpkyne8qr73",
+          "sch_1m7bkz0qqqk0jtghp",
+          "sch_1m7bm76deqsjvv3q3",
+          "sch_1m7bm7bnwch4238ee",
+          "sch_1m7bq19vpd2zxhmew",
+          "sch_1m7bqabf6cc1c1tec",
+          "sch_1m7br10nchp2aqvrx",
+          "sch_1m7brf4yqyy993p8n",
+          "sch_1m7brrc5a3t2j2pf7",
+          "sch_1m7brv0hf16fk3j1b",
+          "sch_1m7brv0hhyzf0c2ex",
+          "sch_1m7bskgr6bm0fdy4h",
+          "sch_1m7bskgrbdszeyg2f",
+          "sch_1m7bwpknfgb3gp9tr",
+          "sch_1m7bwyjt2k3q0m0xs",
+          "sch_1m7c2cfbsy2ptqpnn",
+          "sch_1m7c7mkthaq4wmwkb",
+          "sch_1m7c7q1cpbxzasc48",
+          "sch_1m7ca4gg6x1vv7c3d",
+          "sch_1m7cg74xs7z4yqtjq",
+          "sch_1m7chz0n6jdtm20vz",
+          "sch_1m7cq7rn819jjeysk",
+          "sch_1m7dbbnve39vrmwz9",
+          "sch_1m7etcrn4djxycrcx",
+          "sch_1m7g0vpme24xqq8jg",
+          "sch_1m7g0xnpnfb1b2qmv",
+          "sch_1m7g1exkwzqgh4mka",
+          "sch_31agmw0b",
+          "sch_nv21hhrj",
+          "sch_fkkk5s4z",
+          "sch_byy7q4ea",
+          "sch_wss9hthq",
+          "sch_5dzww0a5",
+          "sch_6b3rexgp",
+          "sch_f51kns4m",
+          "sch_rzf717tp",
+          "sch_qdg0zaa8",
+          "sch_19vkchhn",
+          "sch_z7datp5d",
+          "sch_h1bbrx3c",
+          "sch_0z4xrazj",
+          "sch_qaqdem35",
+          "sch_6xr8vdk1",
+          "sch_v63b8nn7",
+          "sch_kevqrpa4",
+          "sch_rqfja910",
+          "sch_qhcmdnrg",
+          "sch_0fg6btzg",
+          "sch_77k68yx9",
+          "sch_04m059d1",
+          "sch_y46zxdp6",
+          "sch_90vm9dtc",
+          "sch_gqyg2qg9",
+          "sch_s06ew0tw",
+          "sch_nsfc0jv8",
+          "sch_fzegys53",
+          "sch_xgaw9hbg",
+          "sch_p0mmrgqr",
+          "sch_4npjdp80",
+          "sch_87hcv8j8",
+          "sch_1rmv2kcq",
+          "sch_ymekwp5y",
+          "sch_k3vnv2q8",
+          "sch_zr855k1h",
+          "sch_70febk0k",
+          "sch_frbv9v5r",
+          "sch_1w258qqq",
+          "sch_svaf9d4v"
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "active_count": 109,
+    "date": "2026-11-16",
+    "db_path": "/Users/rig128gb/Library/Application Support/Autark/workforce.db",
+    "generated_at": "2026-11-17T03:07:26.085923+00:00",
+    "mode": "ro"
+  },
+  "routines": [
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 3
+      },
+      "id": "sch_1m76816xcyyykzt70",
+      "name": "Daily $30K KPI roll-up",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 1,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m768fnjn3pxwjse1",
+      "name": "Job Scout daily sourcing (ex-Rakazo)",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 1,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m768fnjrmykcscpg",
+      "name": "Daily application packet prep (ex-Rakazo)",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 1,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m768fnk8a30wc6cx",
+      "name": "Job follow-up sweep (ex-Rakazo)",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 1,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 1
+      },
+      "id": "sch_1m768fnkcawt10v8d",
+      "name": "GTM signal prospecting (ex-Rakazo, $30K)",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 1,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 1
+      },
+      "id": "sch_1m768fnkea42kwf5h",
+      "name": "Outreach draft batch (ex-Rakazo, $30K)",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 1,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 1
+      },
+      "id": "sch_1m768fnkkpsz6gqgn",
+      "name": "Interview readiness (ex-Rakazo)",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 1,
+        "recall": 1,
+        "self_improvement": 0,
+        "total": 3
+      },
+      "id": "sch_1m79973bq854nm4gk",
+      "name": "Daily internal revenue and ideas review",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m799g02rgsdtjzb7",
+      "name": "FA701427SC432 Step-1 White Paper due Fri 20 Nov 2026 12:00 P\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 0,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 0
+      },
+      "id": "sch_1m79ap1dkkgx3wm0c",
+      "name": "Aside fleet health check \u00b7 run steps 1\u20133 of Workforce/fleet\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 0,
+        "recall": 2,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m79gx6n6esegrd30",
+      "name": "Fleet-util hourly roll-up (Nora 2)",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 2,
+        "chat_shaped": false,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 4
+      },
+      "id": "sch_1m79np13hqdkqz8rw",
+      "name": "Daily model optimizer (04:00 MT)",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 3
+      },
+      "id": "sch_1m7a761ybrcekn1r7",
+      "name": "Hourly revenue command cycle",
+      "schedule": {
+        "allowed": false,
+        "kind": "rrule",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 2,
+        "model": 2,
+        "recall": 2,
+        "self_improvement": 0,
+        "total": 6
+      },
+      "id": "sch_1m7a8epmd2ftwmdkq",
+      "name": "Vern nightly funnel verification 23:00 MT",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m7a8epmgp9n0thne",
+      "name": "Vern 07:00 MT PASS/FAIL report",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 2,
+        "recall": 2,
+        "self_improvement": 0,
+        "total": 5
+      },
+      "id": "sch_1m7a8qt856evknbkw",
+      "name": "07:30 MT huddle brief (daily)",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 2,
+        "recall": 2,
+        "self_improvement": 0,
+        "total": 5
+      },
+      "id": "sch_1m7a949303q5w2fpk",
+      "name": "Pipeline pulse, daily 08:00 MT (Card 7)",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m7aa0jgszw9kgt41",
+      "name": "Ivo: daily competitor/ad diff (06:00 MT)",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m7aca6czv2t4ysb3",
+      "name": "Daily idea run: 100 ideas + top 3 with financials",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 2,
+        "recall": 1,
+        "self_improvement": 0,
+        "total": 4
+      },
+      "id": "sch_1m7ajt86htprt97hb",
+      "name": "Academy daily improvement cycle",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 3
+      },
+      "id": "sch_1m7ajt86kck6jh60c",
+      "name": "Academy weekly deeper agent/team review",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 2,
+        "self_improvement": 0,
+        "total": 4
+      },
+      "id": "sch_1m7akma3dzetrvxdv",
+      "name": "Ivo: Monday deep competitor rundown (weekly)",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 3
+      },
+      "id": "sch_1m7at7hpbkq2fcs86",
+      "name": "Denver100: check Gmail replies/bounces on batch 1 (9 live la\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m7atp1cajktm1hn1",
+      "name": "Clients.ai trial billing: confirm exact next-bill date + can\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m7atqttnypczccew",
+      "name": "Clients.ai 2-hourly huddle line",
+      "schedule": {
+        "allowed": false,
+        "kind": "rrule",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 2,
+        "recall": 2,
+        "self_improvement": 0,
+        "total": 5
+      },
+      "id": "sch_1m7av7z7m7xpf3mng",
+      "name": "Daily post-metrics line for the 15:00 huddle",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m7axa5bh64gcef0z",
+      "name": "Flynn huddle status every 2h (opt-ins + funnel state)",
+      "schedule": {
+        "allowed": false,
+        "kind": "rrule",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 2,
+        "self_improvement": 0,
+        "total": 4
+      },
+      "id": "sch_1m7b3f7khawngy8gm",
+      "name": "Daily EA triage digest for Mike",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m7b6bgh8hcqwvs70",
+      "name": "Clients.ai cancelled 13 Nov, access ends Nov 20. Mike wants \u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m7bakhk0qep529b1",
+      "name": "Midwest trades list daily top-up (Signe)",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 1,
+        "recall": 2,
+        "self_improvement": 0,
+        "total": 3
+      },
+      "id": "sch_1m7bd3sj8wjd24vrg",
+      "name": "Verify engineering dashboard internally",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 3
+      },
+      "id": "sch_1m7bdd86wjk5ppzz8",
+      "name": "Sales Genius playbook \u2014 daily run",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m7bdwb3pgjcq5f75",
+      "name": "Sales Genius \u2014 2-hourly huddle status line",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 3
+      },
+      "id": "sch_1m7bfevsrpsyy79a0",
+      "name": "Idea Council daily 5",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 3
+      },
+      "id": "sch_1m7bja5hmzkn24ska",
+      "name": "Daily 17:00 approvals list to Mike",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 2,
+        "self_improvement": 0,
+        "total": 4
+      },
+      "id": "sch_1m7bjavafqac7myc6",
+      "name": "Email-time baseline: week-1 report",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m7bjb60k61zzs3m6",
+      "name": "Email-time baseline: log daily row",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 2,
+        "chat_shaped": false,
+        "gate_d_jev": 0,
+        "model": 1,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 3
+      },
+      "id": "sch_1m7bjtb0dyzhvddck",
+      "name": "SEC-5 weekly leaked-key scan (Thu 23:30 MT)",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 2,
+        "chat_shaped": false,
+        "gate_d_jev": 1,
+        "model": 2,
+        "recall": 1,
+        "self_improvement": 0,
+        "total": 6
+      },
+      "id": "sch_1m7bkdt011ct7yk3d",
+      "name": "Unified calendar: refresh agenda",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 2,
+        "chat_shaped": false,
+        "gate_d_jev": 0,
+        "model": 1,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 3
+      },
+      "id": "sch_1m7bkhfbpx8bwteaz",
+      "name": "SEC-9 fleet + cost alarm (every 30 min)",
+      "schedule": {
+        "allowed": false,
+        "kind": "rrule",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 1,
+        "self_improvement": 0,
+        "total": 3
+      },
+      "id": "sch_1m7bkwvpkyne8qr73",
+      "name": "Subscriptions: weekly renewal watch",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m7bkz0qqqk0jtghp",
+      "name": "Weekly review: prep sheet for Mike",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 2,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 4
+      },
+      "id": "sch_1m7bm76deqsjvv3q3",
+      "name": "JAC: nightly scorecard refresh (21:00-06:00 MT window)",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 3
+      },
+      "id": "sch_1m7bm7bnwch4238ee",
+      "name": "JAC: first weekly KPI line (Sat 21 Nov)",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 3
+      },
+      "id": "sch_1m7bq19vpd2zxhmew",
+      "name": "JAC: camp 2027 registration watch (weekly from Feb 2027)",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 2,
+        "model": 2,
+        "recall": 2,
+        "self_improvement": 0,
+        "total": 6
+      },
+      "id": "sch_1m7bqabf6cc1c1tec",
+      "name": "Weekly compliance-calendar re-read + legal KPI line",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m7br10nchp2aqvrx",
+      "name": "Daily signal feed + morning digest (task_1m7bn5v3hvw40ckma).\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m7brf4yqyy993p8n",
+      "name": "Interview #2 slot: Ideawake PRO pilot check-in is today (rev\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m7brrc5a3t2j2pf7",
+      "name": "D1 restore drill (retention policy \u00a73)",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m7brv0hf16fk3j1b",
+      "name": "D2 failover+first-aid drill planning",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 3
+      },
+      "id": "sch_1m7brv0hhyzf0c2ex",
+      "name": "First retention sweep (policy \u00a71)",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m7bskgr6bm0fdy4h",
+      "name": "Weekly research KPI line \u2192 huddle ch_1m7a5eygbhyevzhd4 (task\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m7bskgrbdszeyg2f",
+      "name": "Monthly market memo (answers/07 Q30, task task_1m7bn7mxhj7fa\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 2,
+        "chat_shaped": false,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 4
+      },
+      "id": "sch_1m7bwpknfgb3gp9tr",
+      "name": "Nightly off-disk backup (restic \u2192 rig96gb)",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m7bwyjt2k3q0m0xs",
+      "name": "Monthly access-matrix review (SEC-7 control)",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 3
+      },
+      "id": "sch_1m7c2cfbsy2ptqpnn",
+      "name": "Vendor quote ask went out 13 Nov 21:40 MT to Mile High, Webs\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 1,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 1
+      },
+      "id": "sch_1m7c7mkthaq4wmwkb",
+      "name": "Finance daily ledger",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 1,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 1
+      },
+      "id": "sch_1m7c7q1cpbxzasc48",
+      "name": "Data KPI snapshot daily 07:00",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 1,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 1
+      },
+      "id": "sch_1m7ca4gg6x1vv7c3d",
+      "name": "Weekly check for ALARM task task_1m7bqdjg0zkpb9wc1: parse Au\u2026",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 1,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 1
+      },
+      "id": "sch_1m7cg74xs7z4yqtjq",
+      "name": "Weekly secret-expiry check (ENG R7): run `python3 /Users/rig\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 1,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m7chz0n6jdtm20vz",
+      "name": "ENG R8 weekly autonomy metric: run `python3 /Users/rig128gb/\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 1,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 1
+      },
+      "id": "sch_1m7cq7rn819jjeysk",
+      "name": "ENG R4: stuck-task detector",
+      "schedule": {
+        "allowed": false,
+        "kind": "rrule",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 3
+      },
+      "id": "sch_1m7dbbnve39vrmwz9",
+      "name": "Weekly benchmark-routing refresh",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m7etcrn4djxycrcx",
+      "name": "Crazy Ideas weekly sheet",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 2,
+        "recall": 1,
+        "self_improvement": 0,
+        "total": 4
+      },
+      "id": "sch_1m7g0vpme24xqq8jg",
+      "name": "HOLD: Vendor follow-up held pending Mike's recorded exact-te\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 2,
+        "recall": 1,
+        "self_improvement": 0,
+        "total": 4
+      },
+      "id": "sch_1m7g0xnpnfb1b2qmv",
+      "name": "HOLD: Vendor follow-up backup held pending Mike's recorded e\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 1,
+        "recall": 1,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1m7g1exkwzqgh4mka",
+      "name": "Aside inbox sweep (replaces the broken mention-wake path for\u2026",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 2,
+        "self_improvement": 0,
+        "total": 4
+      },
+      "id": "sch_31agmw0b",
+      "name": "Sage: daily Idea Council file + weekly 3 strategy angles",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_nv21hhrj",
+      "name": "Social Command metrics update (Pulse)",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 3
+      },
+      "id": "sch_j29d7vtg",
+      "name": "JAC: weekly site traffic + mentions monitor (press lane)",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_fkkk5s4z",
+      "name": "Daily 09:00 idle-agent check",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 1,
+        "recall": 2,
+        "self_improvement": 0,
+        "total": 3
+      },
+      "id": "sch_byy7q4ea",
+      "name": "Eng & Dev KPI edition (08:00 + 17:30 MT)",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_wss9hthq",
+      "name": "Midday inbox sweep",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 1,
+        "self_improvement": 0,
+        "total": 3
+      },
+      "id": "sch_5dzww0a5",
+      "name": "Idea Council daily file: crazy-ideas-studios",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 2,
+        "chat_shaped": false,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 2,
+        "self_improvement": 0,
+        "total": 6
+      },
+      "id": "sch_6b3rexgp",
+      "name": "Idea Council weekly scoring",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 1,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 1
+      },
+      "id": "sch_f51kns4m",
+      "name": "Milo hourly open-work sweep",
+      "schedule": {
+        "allowed": false,
+        "kind": "rrule",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 2,
+        "chat_shaped": false,
+        "gate_d_jev": 1,
+        "model": 1,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 4
+      },
+      "id": "sch_rzf717tp",
+      "name": "Daily ping counter (closed day) \u2013 Gov R6",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 2,
+        "self_improvement": 0,
+        "total": 4
+      },
+      "id": "sch_qdg0zaa8",
+      "name": "JAC: state-final post checkpoint (task_3svzktbe)",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_19vkchhn",
+      "name": "Daily receipts status (kept agents)",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_z7datp5d",
+      "name": "Blackwell daily health receipt (e1-health.txt)",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 2,
+        "chat_shaped": false,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 2,
+        "self_improvement": 0,
+        "total": 6
+      },
+      "id": "sch_h1bbrx3c",
+      "name": "Model-layer 5-min failure buckets",
+      "schedule": {
+        "allowed": false,
+        "kind": "rrule",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_0z4xrazj",
+      "name": "Model-layer 30-min lane probe",
+      "schedule": {
+        "allowed": false,
+        "kind": "rrule",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 1,
+        "self_improvement": 0,
+        "total": 3
+      },
+      "id": "sch_qaqdem35",
+      "name": "Scout 2 daily signals + 3 scored hooks",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 2,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 4
+      },
+      "id": "sch_6xr8vdk1",
+      "name": "Daily glove live-readiness advance",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 2,
+        "model": 2,
+        "recall": 1,
+        "self_improvement": 0,
+        "total": 5
+      },
+      "id": "sch_v63b8nn7",
+      "name": "Check Gmail (mrodgersjs@gmail.com via Gmail API; client id/s\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_kevqrpa4",
+      "name": "Scribe D1 daily draft batch",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_rqfja910",
+      "name": "Reel R1 daily short-video draft",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_qhcmdnrg",
+      "name": "L8 after-measure (3 cases): (1) did the 17 Nov 07:30 brief c\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_0fg6btzg",
+      "name": "06:00 chase for 17 Nov. List sources/2026-11-17/. Chase each\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_77k68yx9",
+      "name": "Kill-date checks from decisions.md: (21 Nov) Verify Don't Cl\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 2,
+        "chat_shaped": false,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 4
+      },
+      "id": "sch_04m059d1",
+      "name": "Fleet-util UNKNOWN row check",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 2,
+        "self_improvement": 0,
+        "total": 4
+      },
+      "id": "sch_y46zxdp6",
+      "name": "Dax: file tomorrow's Idea Council design.md the night before",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_90vm9dtc",
+      "name": "Trial of Dax's brief layout for the 17 Nov 5 (outcomes/ag_1m\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_gqyg2qg9",
+      "name": "Weekley SB-01: check Maya's task_1m7dxkctqx0j4hh5p for the r\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_s06ew0tw",
+      "name": "KWP after-measure: count which kwp-* skills appear in agents\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 0,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 1
+      },
+      "id": "sch_nsfc0jv8",
+      "name": "Daily model-client KPI",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_fzegys53",
+      "name": "Re-pull Google Trends 'AI agents for small business' (US, py\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_xgaw9hbg",
+      "name": "task_gmp5e00d: RIG post 06f9a49d was due 08:30 MT with an in\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 1,
+        "self_improvement": 0,
+        "total": 3
+      },
+      "id": "sch_p0mmrgqr",
+      "name": "Check Vera's Agency Agents staging package due 17 Nov noon (\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 2,
+        "chat_shaped": false,
+        "gate_d_jev": 0,
+        "model": 1,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 3
+      },
+      "id": "sch_4npjdp80",
+      "name": "Fleet queue depth check (hold, no refill)",
+      "schedule": {
+        "allowed": false,
+        "kind": "rrule",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_87hcv8j8",
+      "name": "RIG Clients cutover 4h check",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 1,
+        "model": 2,
+        "recall": 2,
+        "self_improvement": 0,
+        "total": 5
+      },
+      "id": "sch_1rmv2kcq",
+      "name": "F1 daily spend line",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 1,
+        "self_improvement": 0,
+        "total": 3
+      },
+      "id": "sch_ymekwp5y",
+      "name": "Jacob X P3 kill check: followers < 250 on 2026-11-20 -> kill\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_k3vnv2q8",
+      "name": "Interview-drill readiness check: verify Mike ran /bbb-drill \u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 0,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 0
+      },
+      "id": "sch_zr855k1h",
+      "name": "Estate health sweep (30-min)",
+      "schedule": {
+        "allowed": false,
+        "kind": "rrule",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 0,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 0
+      },
+      "id": "sch_70febk0k",
+      "name": "Daily scorecard row (18:00 MT)",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 0,
+        "recall": 1,
+        "self_improvement": 0,
+        "total": 1
+      },
+      "id": "sch_frbv9v5r",
+      "name": "Weekly OpenLIT pull (Mon 07:30 MT)",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 0,
+        "recall": 2,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_1w258qqq",
+      "name": "Dead-URL drift check (07:00 MT)",
+      "schedule": {
+        "allowed": false,
+        "kind": "cron",
+        "violations": [
+          "manual_dry_runs_passed: requires manual_dry_runs_passed >= 1",
+          "idempotent_writes: requires idempotent_writes == True",
+          "max_retries: requires max_retries <= 3",
+          "token_ceiling: requires token_ceiling > 0",
+          "watched_failure_channel: requires watched_failure_channel non-empty"
+        ]
+      }
+    },
+    {
+      "arms": {
+        "action": 0,
+        "chat_shaped": true,
+        "gate_d_jev": 0,
+        "model": 2,
+        "recall": 0,
+        "self_improvement": 0,
+        "total": 2
+      },
+      "id": "sch_svaf9d4v",
+      "name": "20:30 playable capture checkpoint: Marcus's task_tqkfysr9 (s\u2026",
+      "schedule": {
+        "allowed": true,
+        "kind": "manual",
+        "violations": []
+      }
+    }
+  ]
+}

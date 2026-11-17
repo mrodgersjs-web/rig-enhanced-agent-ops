@@ -1,0 +1,25 @@
+{
+  "artifact": "bleed_report.json",
+  "clients_ai_send": false,
+  "draft_only": true,
+  "gate_d": "draft_only: nothing sends without Mike's exact-text approval",
+  "generated_at": "2026-11-17T16:08:56.626347+00:00",
+  "inputs": {
+    "cost_per_error": 40,
+    "errors_per_week": 3,
+    "hours_per_week": 6,
+    "loaded_hourly_rate": 120,
+    "lost_leads_per_week": 2,
+    "value_per_lead": 500
+  },
+  "inputs_verified": true,
+  "result": {
+    "annual_error_bleed": 6240.0,
+    "annual_lead_loss_bleed": 52000.0,
+    "annual_time_bleed": 37440.0,
+    "annual_total_bleed": 95680.0,
+    "formula": "hours_per_week * loaded_hourly_rate * 52 + error/lead-loss bleed",
+    "gate_d": "draft_only: nothing sends without Mike's exact-text approval"
+  },
+  "send_enabled": false
+}

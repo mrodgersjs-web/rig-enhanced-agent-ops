@@ -1,0 +1,176 @@
+[
+  {
+    "id": "b7e20942-2026-4116-9b02-209f5e6e861e",
+    "name": "RIG Move 2: Nod -> Jev -> Twenty -> Aside Gate-D Reply Pipeline (v1)",
+    "active": false,
+    "isArchived": false,
+    "nodes": [
+      {
+        "id": "n1_trigger_inbound_reply",
+        "name": "Step 1",
+        "type": "trigger",
+        "typeVersion": 1,
+        "position": [
+          240,
+          300
+        ],
+        "parameters": {}
+      },
+      {
+        "id": "n2_paginate_threads",
+        "name": "Step 2",
+        "type": "pagination",
+        "typeVersion": 1,
+        "position": [
+          460,
+          300
+        ],
+        "parameters": {}
+      },
+      {
+        "id": "n3_dnc_gate_reply",
+        "name": "Step 3",
+        "type": "gate",
+        "typeVersion": 1,
+        "position": [
+          680,
+          300
+        ],
+        "parameters": {}
+      },
+      {
+        "id": "n4_jev_reply_classification",
+        "name": "Step 4",
+        "type": "judgment",
+        "typeVersion": 1,
+        "position": [
+          900,
+          300
+        ],
+        "parameters": {}
+      },
+      {
+        "id": "n5_build_reply_record",
+        "name": "Step 5",
+        "type": "transform",
+        "typeVersion": 1,
+        "position": [
+          1120,
+          300
+        ],
+        "parameters": {}
+      },
+      {
+        "id": "n6_twenty_contact_brief",
+        "name": "Step 6",
+        "type": "transform",
+        "typeVersion": 1,
+        "position": [
+          1340,
+          300
+        ],
+        "parameters": {}
+      },
+      {
+        "id": "n7_draft_reply_authoring",
+        "name": "Step 7",
+        "type": "authoring",
+        "typeVersion": 1,
+        "position": [
+          1560,
+          300
+        ],
+        "parameters": {}
+      },
+      {
+        "id": "n8_gate_d_card_stage",
+        "name": "Step 8",
+        "type": "stage",
+        "typeVersion": 1,
+        "position": [
+          1780,
+          300
+        ],
+        "parameters": {}
+      },
+      {
+        "id": "n9_trigger_event_intake",
+        "name": "Step 9",
+        "type": "trigger",
+        "typeVersion": 1,
+        "position": [
+          2000,
+          300
+        ],
+        "parameters": {}
+      },
+      {
+        "id": "n10_dnc_gate_lead",
+        "name": "Step 10",
+        "type": "gate",
+        "typeVersion": 1,
+        "position": [
+          2220,
+          300
+        ],
+        "parameters": {}
+      },
+      {
+        "id": "n11_jev_trigger_relevance",
+        "name": "Step 11",
+        "type": "judgment",
+        "typeVersion": 1,
+        "position": [
+          2440,
+          300
+        ],
+        "parameters": {}
+      },
+      {
+        "id": "n12_score_trigger_event",
+        "name": "Step 12",
+        "type": "transform",
+        "typeVersion": 1,
+        "position": [
+          2660,
+          300
+        ],
+        "parameters": {}
+      },
+      {
+        "id": "n13_queue_qualified_lead",
+        "name": "Step 13",
+        "type": "queue",
+        "typeVersion": 1,
+        "position": [
+          2880,
+          300
+        ],
+        "parameters": {}
+      },
+      {
+        "id": "n14_drop_record",
+        "name": "Step 14",
+        "type": "terminal",
+        "typeVersion": 1,
+        "position": [
+          3100,
+          300
+        ],
+        "parameters": {}
+      }
+    ],
+    "connections": {},
+    "settings": {
+      "executionOrder": "v1"
+    },
+    "staticData": null,
+    "meta": {
+      "templateCredsSetupCompleted": false
+    },
+    "pinData": {},
+    "versionId": "c8f31053-2026-4116-9b02-209f5e6e861e",
+    "triggerCount": 0,
+    "tags": []
+  }
+]

@@ -22,6 +22,9 @@ import statistics
 import sys
 from typing import Any, Dict, List, Optional, Sequence
 
+if __package__ in (None, ""):  # direct CLI run: `python3 .../bridges.py`
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2]))
+
 from robonuggets_ops import dnc_guard
 
 TOOLS: Sequence[str] = ("aside", "autark", "nod", "orca", "omp", "prime-agent")

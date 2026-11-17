@@ -1,0 +1,43 @@
+{
+  "artifact": "working_teaser.json",
+  "clients_ai_send": false,
+  "draft_only": true,
+  "gate_d": "draft_only: nothing sends without Mike's exact-text approval",
+  "generated_at": "2026-11-17T16:08:56.626347+00:00",
+  "input": {
+    "company": "UCSF",
+    "contact_name": "Jordan Lee",
+    "evidence": "the weekly ops report shows a six-hour manual reconciliation block",
+    "finding": "invoice data is re-keyed by hand between the portal and the ledger every week",
+    "recipient_domain": "",
+    "url": "https://ucsf.fa.us2.oraclecloud.com/hcmUI"
+  },
+  "result": {
+    "blocked_by": {
+      "allowed": true,
+      "atsHostCarveOut": true,
+      "employer": "UCSF",
+      "gate": "1-dnc"
+    },
+    "draft": {
+      "body": "I ran a quick audit of UCSF and found invoice data is re-keyed by hand between the portal and the ledger every week. The evidence: the weekly ops report shows a six-hour manual reconciliation block. It looked worth a look, so I wrote it up as a short report. Mind if I send what I found over?. Happy to walk through it live instead if that is easier.",
+      "sentences": [
+        "I ran a quick audit of UCSF and found invoice data is re-keyed by hand between the portal and the ledger every week",
+        "The evidence: the weekly ops report shows a six-hour manual reconciliation block",
+        "It looked worth a look, so I wrote it up as a short report",
+        "Mind if I send what I found over?",
+        "Happy to walk through it live instead if that is easier"
+      ],
+      "subject": "one thing I found at UCSF"
+    },
+    "gate_d": "draft_only: nothing sends without Mike's exact-text approval",
+    "ok": true,
+    "stage": "pre_touch_1"
+  },
+  "send_enabled": false,
+  "touch1_link_free_guard": {
+    "gate_d": "draft_only: nothing sends without Mike's exact-text approval",
+    "link_free": true,
+    "links": []
+  }
+}

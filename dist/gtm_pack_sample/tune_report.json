@@ -1,0 +1,54 @@
+{
+  "artifact": "tune_report.json",
+  "clients_ai_send": false,
+  "draft_only": true,
+  "fields": {
+    "dollar_value": 3600.0,
+    "expansion_suggestion": "Extend the workflow to invoice reconciliation next month",
+    "metric": {
+      "type": "hours_returned",
+      "value": 12.0
+    },
+    "paid_versus_received": {
+      "paid": 2500.0,
+      "received": 3600.0,
+      "roi": 1.44
+    },
+    "what_delivered": "Weekly ops-report workflow"
+  },
+  "gate_d": "draft_only: nothing sends without Mike's exact-text approval",
+  "generated_at": "2026-11-17T16:08:56.626347+00:00",
+  "input": {
+    "dollar_value": 3600,
+    "expansion_suggestion": "Extend the workflow to invoice reconciliation next month",
+    "metric_value": 12,
+    "paid": 2500,
+    "purchase_metric": "hours_returned",
+    "received": 3600,
+    "what_shipped": "Weekly ops-report workflow"
+  },
+  "result": {
+    "errors": [],
+    "field_count": 5,
+    "gate_d": "draft_only: nothing sends without Mike's exact-text approval",
+    "ok": true,
+    "slide": {
+      "fields": {
+        "dollar_value": 3600.0,
+        "expansion_suggestion": "Extend the workflow to invoice reconciliation next month",
+        "metric": {
+          "type": "hours_returned",
+          "value": 12.0
+        },
+        "paid_versus_received": {
+          "paid": 2500.0,
+          "received": 3600.0,
+          "roi": 1.44
+        },
+        "what_delivered": "Weekly ops-report workflow"
+      },
+      "title": "Tune report \u2014 one slide"
+    }
+  },
+  "send_enabled": false
+}

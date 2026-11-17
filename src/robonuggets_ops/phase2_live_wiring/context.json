@@ -1,0 +1,70 @@
+{
+  "move": "phase2-live-wiring",
+  "status": "implemented",
+  "deliverables": [
+    {
+      "name": "run_live_product_phase2.py",
+      "module": "scripts/run_live_product_phase2.py",
+      "src": "src/robonuggets_ops/phase2_live_wiring/live_wiring.py"
+    },
+    {
+      "name": "live_arms_audit_2026-11-16.json",
+      "module": "reports/live_arms_audit_2026-11-16.json",
+      "src": "src/robonuggets_ops/phase2_live_wiring/live_wiring.py"
+    },
+    {
+      "name": "live_arms_summary.md",
+      "module": "reports/live_arms_summary.md",
+      "src": "src/robonuggets_ops/phase2_live_wiring/live_wiring.py"
+    },
+    {
+      "name": "harness_bridges bundle (aside, autark, nod, orca, omp, prime-agent)",
+      "module": "dist/harness_bridges/",
+      "src": "src/robonuggets_ops/move4_harness_bridges/bridges.py"
+    }
+  ],
+  "citations": [
+    "src: classroom/hermes-agent-os/m3-the-arms-framework-audit-any-ai-tool",
+    "src: classroom/claude-code-mastery/4-scheduled-tasks",
+    "src: classroom/hermes-agent-os/m5-your-morning-briefing-first-scheduled-task",
+    "src: classroom/community-vault/j8-codex-agents-md",
+    "src: classroom/claude-code-mastery/2-context-control",
+    "src: classroom/claude-code-mastery/1-skills"
+  ],
+  "cited_sources": [
+    {
+      "id": "src: classroom/hermes-agent-os/m3-the-arms-framework-audit-any-ai-tool",
+      "supports": "ARMS + Gate-D 5-axis audit reused via move1_arms_audit for the live schedule sweep"
+    },
+    {
+      "id": "src: classroom/claude-code-mastery/4-scheduled-tasks",
+      "supports": "schedule pre-arm rules and the cron/RRULE arming checks in validate_schedule"
+    },
+    {
+      "id": "src: classroom/hermes-agent-os/m5-your-morning-briefing-first-scheduled-task",
+      "supports": "per-slot digest consolidation into one inbox digest per Mike-time slot"
+    },
+    {
+      "id": "src: classroom/community-vault/j8-codex-agents-md",
+      "supports": "thin harness bridge pattern: pointers to canonical doctrine, never prose copies"
+    },
+    {
+      "id": "src: classroom/claude-code-mastery/2-context-control",
+      "supports": "rule-ref pointers keeping each bridge within its duty keywords"
+    },
+    {
+      "id": "src: classroom/claude-code-mastery/1-skills",
+      "supports": "six-tool skill/role mapping (aside, autark, nod, orca, omp, prime-agent)"
+    }
+  ],
+  "gates": {
+    "read_only_db": "workforce.db opened mode=ro + PRAGMA query_only=1; zero schedule mutations; never touch live cron/launchd",
+    "gate_d": "gate_d_actions stay empty without approval records; gate_d_draft_only invariant preserved in every bridge",
+    "no_oracle": "bridge invariants carry the ATS-host carve-out with dnc_guard.ATS_HOST_DOMAINS and dnc_guard.BLOCKED_EMPLOYERS",
+    "secrets": "never read or print raw secrets (the secrets table is never queried); feedback text is counted, never copied"
+  },
+  "jev": {
+    "route": "CODE",
+    "note": "pure deterministic mapping and scoring; Jev-before-done invariant is carried in every generated bridge"
+  }
+}
