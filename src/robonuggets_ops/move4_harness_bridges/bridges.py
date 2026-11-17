@@ -160,6 +160,34 @@ def lint_bridge(bridge: Dict[str, Any], doctrine_dir: Optional[pathlib.Path] = N
     return {"ok": not violations, "tool": bridge.get("tool", "?"), "violations": violations}
 
 
+def render_bridge_md(bridge: Dict[str, Any]) -> str:
+    """Thin bridge markdown: role line, canonical rule pointers, exactly 3 invariants.
+
+    Pointers, not copies: no doctrine prose is duplicated into the bundle
+    (the anti-duplication lint above is what keeps this honest).
+    """
+    lines = [
+        f"# {bridge.get('tool', '?')} harness bridge",
+        "",
+        f"Role: {bridge.get('role', '')}",
+        f"Canonical doctrine: {bridge.get('canonical_dir', '')}",
+        "",
+        "## Rule refs (canonical doctrine pointers)",
+        "",
+    ]
+    refs = bridge.get("rule_refs") or []
+    for ref in refs:
+        lines.append(f"- {ref.get('ref', '?')} — {ref.get('path', '')}")
+    if not refs:
+        lines.append("- (none matched)")
+    invariants = bridge.get("invariants") or {}
+    lines += ["", "## Invariants", ""]
+    for index, name in enumerate((INVARIANT_NO_ORACLE, INVARIANT_GATE_D, INVARIANT_JEV), start=1):
+        lines.append(f"{index}. {name} — {json.dumps(invariants.get(name, {}), sort_keys=True)}")
+    lines += ["", "_Thin bridge: pointers only, no doctrine prose duplicated._", ""]
+    return "\n".join(lines)
+
+
 def diff_draft_to_approved(draft_text: str, approved_text: str) -> Dict[str, Any]:
     """Structured word-level diff between an agent draft and Mike's approved edit."""
     draft_words = draft_text.split()
